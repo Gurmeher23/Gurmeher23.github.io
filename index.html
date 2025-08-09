@@ -128,6 +128,10 @@
         .close-button:focus {
             color: white;
         }
+        .lang-switch button.active {
+            color: #4f46e5;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-200">
@@ -136,28 +140,40 @@
     <header id="navbar" class="navbar fixed w-full top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#home" class="text-2xl font-bold text-white">Gurmeher Singh Puri</a>
-            <nav class="hidden md:flex space-x-8">
-                <a href="#about" class="hover:text-indigo-400 transition">About</a>
-                <a href="#experience" class="hover:text-indigo-400 transition">Experience</a>
-                <a href="#projects" class="hover:text-indigo-400 transition">Projects</a>
-                <a href="#education" class="hover:text-indigo-400 transition">Education</a>
-                <a href="#achievements" class="hover:text-indigo-400 transition">Achievements</a>
-                <a href="#publications" class="hover:text-indigo-400 transition">Publications</a>
-                <a href="#contact" class="hover:text-indigo-400 transition">Contact</a>
-            </nav>
-            <button id="mobile-menu-button" class="md:hidden text-white">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
+            <div class="flex items-center">
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#about" data-key="nav_about" class="hover:text-indigo-400 transition">About</a>
+                    <a href="#experience" data-key="nav_experience" class="hover:text-indigo-400 transition">Experience</a>
+                    <a href="#projects" data-key="nav_projects" class="hover:text-indigo-400 transition">Projects</a>
+                    <a href="#education" data-key="nav_education" class="hover:text-indigo-400 transition">Education</a>
+                    <a href="#achievements" data-key="nav_achievements" class="hover:text-indigo-400 transition">Achievements</a>
+                    <a href="#publications" data-key="nav_publications" class="hover:text-indigo-400 transition">Publications</a>
+                    <a href="#contact" data-key="nav_contact" class="hover:text-indigo-400 transition">Contact</a>
+                </nav>
+                <div class="lang-switch hidden md:flex items-center ml-8 text-white">
+                    <button id="lang-en" class="active px-2" onclick="switchLanguage('en')">EN</button>
+                    <span>|</span>
+                    <button id="lang-de" class="px-2" onclick="switchLanguage('de')">DE</button>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden text-white ml-4">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
-            <a href="#about" class="block px-6 py-3 hover:bg-gray-700">About</a>
-            <a href="#experience" class="block px-6 py-3 hover:bg-gray-700">Experience</a>
-            <a href="#projects" class="block px-6 py-3 hover:bg-gray-700">Projects</a>
-            <a href="#education" class="block px-6 py-3 hover:bg-gray-700">Education</a>
-            <a href="#achievements" class="block px-6 py-3 hover:bg-gray-700">Achievements</a>
-            <a href="#publications" class="block px-6 py-3 hover:bg-gray-700">Publications</a>
-            <a href="#contact" class="block px-6 py-3 hover:bg-gray-700">Contact</a>
+             <a href="#about" data-key="nav_about_mobile" class="block px-6 py-3 hover:bg-gray-700">About</a>
+            <a href="#experience" data-key="nav_experience_mobile" class="block px-6 py-3 hover:bg-gray-700">Experience</a>
+            <a href="#projects" data-key="nav_projects_mobile" class="block px-6 py-3 hover:bg-gray-700">Projects</a>
+            <a href="#education" data-key="nav_education_mobile" class="block px-6 py-3 hover:bg-gray-700">Education</a>
+            <a href="#achievements" data-key="nav_achievements_mobile" class="block px-6 py-3 hover:bg-gray-700">Achievements</a>
+            <a href="#publications" data-key="nav_publications_mobile" class="block px-6 py-3 hover:bg-gray-700">Publications</a>
+            <a href="#contact" data-key="nav_contact_mobile" class="block px-6 py-3 hover:bg-gray-700">Contact</a>
+            <div class="lang-switch flex items-center justify-center py-3 text-white">
+                <button id="lang-en-mobile" class="active px-2" onclick="switchLanguage('en')">EN</button>
+                <span>|</span>
+                <button id="lang-de-mobile" class="px-2" onclick="switchLanguage('de')">DE</button>
+            </div>
         </div>
     </header>
 
@@ -166,14 +182,14 @@
         <section id="home" class="min-h-screen flex items-center bg-gray-900">
             <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
                 <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
-                    <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-4">I'm Gurmeher Singh Puri</h1>
-                    <p class="text-xl md:text-2xl text-indigo-400 mb-6">A <span id="typed-text"></span></p>
-                    <p class="text-lg text-gray-300 mb-8 max-w-lg mx-auto md:mx-0">4th-semester master's student in Computer Science with a focus on Artificial Intelligence, based in Freiburg, Germany.</p>
+                    <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-4" data-key="hero_title">I'm Gurmeher Singh Puri</h1>
+                    <p class="text-xl md:text-2xl text-indigo-400 mb-6"><span data-key="hero_i_am">A</span> <span id="typed-text"></span></p>
+                    <p class="text-lg text-gray-300 mb-8 max-w-lg mx-auto md:mx-0" data-key="hero_subtitle">4th-semester master's student in Computer Science with a focus on Artificial Intelligence, based in Freiburg, Germany.</p>
                     <div class="flex justify-center md:justify-start items-center space-x-6">
                         <a href="mailto:gurmeher23@gmail.com" class="text-gray-300 hover:text-indigo-400 transition" title="Email"><i class="fas fa-envelope text-2xl"></i></a>
                         <a href="https://www.linkedin.com/in/gurmeher-singh-puri-674949146/" target="_blank" class="text-gray-300 hover:text-indigo-400 transition" title="LinkedIn"><i class="fab fa-linkedin text-2xl"></i></a>
                         <a href="https://github.com/Gurmeher23" target="_blank" class="text-gray-300 hover:text-indigo-400 transition" title="GitHub"><i class="fab fa-github text-2xl"></i></a>
-                        <a href="Gurmeher_Resume.pdf" download="Gurmeher_Puri_Resume.pdf" class="bg-indigo-600 text-white font-bold py-2 px-6 rounded-full hover:bg-indigo-700 transition-colors duration-300">
+                        <a id="cv-download" href="Gurmeher_Resume.pdf" download="Gurmeher_Puri_Resume.pdf" class="bg-indigo-600 text-white font-bold py-2 px-6 rounded-full hover:bg-indigo-700 transition-colors duration-300" data-key="hero_cv_button">
                             Download CV
                         </a>
                     </div>
@@ -187,13 +203,13 @@
         <!-- About Section -->
         <section id="about" class="py-20 bg-gray-800">
             <div class="container mx-auto px-6">
-                <h2 class="section-title text-3xl text-center mb-12 reveal">About Me</h2>
+                <h2 class="section-title text-3xl text-center mb-12 reveal" data-key="about_title">About Me</h2>
                 <div class="flex flex-col md:flex-row items-center gap-12 reveal">
                     <div class="md:w-1/3">
                         <img src="assets/profile-about.png" alt="Gurmeher Singh Puri" class="rounded-lg shadow-xl w-full">
                     </div>
                     <div class="md:w-2/3">
-                        <p class="text-lg text-gray-300 leading-relaxed">
+                        <p class="text-lg text-gray-300 leading-relaxed" data-key="about_text">
                             I am a 4th-semester master's student in Computer Science with a focus on Artificial Intelligence at the University of Freiburg. Currently working as a Work Student at Fraunhofer ISE, Freiburg, with a background as a Software Engineer at Samsung R&D Institute. Expertise in software development, automation testing, and various programming languages. Seeking opportunities to enhance skills and knowledge, preferably in a tech lead role.
                         </p>
                     </div>
@@ -204,59 +220,59 @@
         <!-- Experience Section -->
         <section id="experience" class="py-20 bg-gray-900">
             <div class="container mx-auto px-6">
-                <h2 class="section-title text-3xl text-center mb-12 reveal">Work Experience</h2>
+                <h2 class="section-title text-3xl text-center mb-12 reveal" data-key="experience_title">Work Experience</h2>
                 <div class="max-w-3xl mx-auto">
-                    <div class="timeline-item reveal">
+                     <div class="timeline-item reveal">
                         <div class="timeline-dot"></div>
-                        <h3 class="text-xl font-semibold text-white">Working Student</h3>
+                        <h3 class="text-xl font-semibold text-white" data-key="exp1_title">Working Student</h3>
                         <p class="text-indigo-400 font-medium"><a href="https://www.ise.fraunhofer.de/" target="_blank" class="hover:underline">Fraunhofer ISE, Freiburg, Germany</a></p>
-                        <p class="text-gray-400 mb-2">March 2024 – Present</p>
+                        <p class="text-gray-400 mb-2" data-key="exp1_date">March 2024 – Present</p>
                         <ul class="list-disc list-inside text-gray-300 space-y-1">
-                            <li>Developed the Spotlob project, an image processing library for automated detection tasks.</li>
-                            <li>Applied machine learning models for defect detection in solar cells, improving analysis accuracy.</li>
-                            <li>Automated workflows using Apache Airflow, MinIO, and Flask.</li>
+                            <li data-key="exp1_desc1">Developed the Spotlob project, an image processing library for automated detection tasks.</li>
+                            <li data-key="exp1_desc2">Applied machine learning models for defect detection in solar cells, improving analysis accuracy.</li>
+                            <li data-key="exp1_desc3">Automated workflows using Apache Airflow, MinIO, and Flask.</li>
                         </ul>
                     </div>
                     <div class="timeline-item reveal">
                         <div class="timeline-dot"></div>
-                        <h3 class="text-xl font-semibold text-white">AI Work Student</h3>
+                        <h3 class="text-xl font-semibold text-white" data-key="exp2_title">Master Project Student</h3>
                         <p class="text-indigo-400 font-medium">
                             <a href="https://www.inatech.uni-freiburg.de/" target="_blank" class="hover:underline">INATECH</a> & 
-                            <a href="https://ml.informatik.uni-freiburg.de" target="_blank" class="hover:underline">Machine Learning Lab, University of Freiburg</a>
+                            <a href="https://ml.cs.uni-freiburg.de/" target="_blank" class="hover:underline">Machine Learning Lab, University of Freiburg</a>
                         </p>
-                        <p class="text-gray-400 mb-2">December 2024 – July 2025</p>
+                        <p class="text-gray-400 mb-2" data-key="exp2_date">December 2024 – July 2025</p>
                         <ul class="list-disc list-inside text-gray-300 space-y-1">
-                            <li>Developed a machine learning system for predicting electricity grid carbon emission intensities across Germany using AutoML.</li>
-                            <li>Integrated data from ENTSO-E and CO2map.de, covering generation forecasts, cross-border trading, and carbon intensity measurements.</li>
+                            <li data-key="exp2_desc1">Developed a machine learning system for predicting electricity grid carbon emission intensities across Germany using AutoML.</li>
+                            <li data-key="exp2_desc2">Integrated data from ENTSO-E and CO2map.de, covering generation forecasts, cross-border trading, and carbon intensity measurements.</li>
                         </ul>
                     </div>
                     <div class="timeline-item reveal">
                         <div class="timeline-dot"></div>
-                        <h3 class="text-xl font-semibold text-white">Software Engineer</h3>
+                        <h3 class="text-xl font-semibold text-white" data-key="exp3_title">Software Engineer</h3>
                         <p class="text-indigo-400 font-medium"><a href="https://research.samsung.com/sri-n" target="_blank" class="hover:underline">Samsung Research and Development, Noida</a></p>
-                        <p class="text-gray-400 mb-2">August 2021 – September 2023</p>
+                        <p class="text-gray-400 mb-2" data-key="exp3_date">August 2021 – September 2023</p>
                         <ul class="list-disc list-inside text-gray-300 space-y-1">
-                            <li>Developed 12 tools and websites using JavaScript, Python, and RPA.</li>
-                            <li>Managed smoke executions on 1000+ devices using CI/CD tools.</li>
+                            <li data-key="exp3_desc1">Developed 12 tools and websites using JavaScript, Python, and RPA.</li>
+                            <li data-key="exp3_desc2">Managed smoke executions on 1000+ devices using CI/CD tools.</li>
                         </ul>
                     </div>
                     <div class="timeline-item reveal">
                         <div class="timeline-dot"></div>
-                        <h3 class="text-xl font-semibold text-white">Software Engineer Intern</h3>
+                        <h3 class="text-xl font-semibold text-white" data-key="exp4_title">Software Engineer Intern</h3>
                         <p class="text-indigo-400 font-medium"><a href="https://research.samsung.com/sri-n" target="_blank" class="hover:underline">Samsung Research and Development, Noida</a></p>
-                        <p class="text-gray-400 mb-2">January 2021 – July 2021</p>
+                        <p class="text-gray-400 mb-2" data-key="exp4_date">January 2021 – July 2021</p>
                         <ul class="list-disc list-inside text-gray-300 space-y-1">
-                            <li>Developed 2 websites using JavaScript, Python, and CSS.</li>
-                            <li>Participated in Samsung Knox automation test case development.</li>
+                            <li data-key="exp4_desc1">Developed 2 websites using JavaScript, Python, and CSS.</li>
+                            <li data-key="exp4_desc2">Participated in Samsung Knox automation test case development.</li>
                         </ul>
                     </div>
                     <div class="timeline-item reveal">
                         <div class="timeline-dot"></div>
-                        <h3 class="text-xl font-semibold text-white">Web Developer Intern</h3>
+                        <h3 class="text-xl font-semibold text-white" data-key="exp5_title">Web Developer Intern</h3>
                         <p class="text-indigo-400 font-medium"><a href="https://www.bhel.com/" target="_blank" class="hover:underline">Bharat Heavy Electrical Limited (BHEL)</a></p>
-                        <p class="text-gray-400 mb-2">May 2019 – July 2019</p>
+                        <p class="text-gray-400 mb-2" data-key="exp5_date">May 2019 – July 2019</p>
                         <ul class="list-disc list-inside text-gray-300 space-y-1">
-                            <li>Developed a basic website called "Student Tracker" using Eclipse and Tomcat Server 9.0.</li>
+                            <li data-key="exp5_desc1">Developed a basic website called "Student Tracker" using Eclipse and Tomcat Server 9.0.</li>
                         </ul>
                     </div>
                 </div>
@@ -266,62 +282,62 @@
         <!-- Projects Section -->
         <section id="projects" class="py-20 bg-gray-800">
             <div class="container mx-auto px-6">
-                <h2 class="section-title text-3xl text-center mb-12 reveal">Projects</h2>
+                <h2 class="section-title text-3xl text-center mb-12 reveal" data-key="projects_title">Projects</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="bg-gray-900 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 reveal cursor-pointer project-card flex flex-col" data-modal="modal1">
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-bold text-white mb-2">Electricity Carbon Intensity Prediction</h3>
+                            <h3 class="text-xl font-bold text-white mb-2" data-key="p1_title">Electricity Carbon Intensity Prediction</h3>
                             <p class="text-indigo-400 text-sm mb-2">(AutoML, Python, Pandas)</p>
-                            <p class="text-gray-300 flex-grow">Developed a system to forecast electricity carbon intensity in Germany using AutoGluon.</p>
+                            <p class="text-gray-300 flex-grow" data-key="p1_desc">Developed a system to forecast electricity carbon intensity in Germany using AutoGluon.</p>
                         </div>
                     </div>
                     <div class="bg-gray-900 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 reveal cursor-pointer project-card flex flex-col" data-modal="modal2">
                          <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-bold text-white mb-2">Predicting Algorithm Runtime with TabPFN</h3>
+                            <h3 class="text-xl font-bold text-white mb-2" data-key="p2_title">Predicting Algorithm Runtime with TabPFN</h3>
                             <p class="text-indigo-400 text-sm mb-2">(Python, Deep Learning, TabPFN)</p>
-                            <p class="text-gray-300 flex-grow">Investigated the use of TabPFN to predict algorithm runtime distributions against specialized models.</p>
+                            <p class="text-gray-300 flex-grow" data-key="p2_desc">Investigated the use of TabPFN to predict algorithm runtime distributions against specialized models.</p>
                         </div>
                     </div>
                     <div class="bg-gray-900 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 reveal cursor-pointer project-card flex flex-col" data-modal="modal3">
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-bold text-white mb-2">Automation Process Tool</h3>
+                            <h3 class="text-xl font-bold text-white mb-2" data-key="p3_title">Automation Process Tool</h3>
                             <p class="text-indigo-400 text-sm mb-2">(Python, MinIo, Airflow, Docker)</p>
-                            <p class="text-gray-300 flex-grow">Automates project workflows by integrating Airflow, MinIO, and Flask for streamlined processes.</p>
+                            <p class="text-gray-300 flex-grow" data-key="p3_desc">Automates project workflows by integrating Airflow, MinIO, and Flask for streamlined processes.</p>
                         </div>
                     </div>
                     <div class="bg-gray-900 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 reveal cursor-pointer project-card flex flex-col" data-modal="modal7">
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-bold text-white mb-2">Chatbot for Research Assistance</h3>
+                            <h3 class="text-xl font-bold text-white mb-2" data-key="p7_title">Chatbot for Research Assistance</h3>
                             <p class="text-indigo-400 text-sm mb-2">(Python, NLP, NLTK, spaCy)</p>
-                            <p class="text-gray-300 flex-grow">Developed a Python-based chatbot with NLP capabilities to accelerate patent research.</p>
+                            <p class="text-gray-300 flex-grow" data-key="p7_desc">Developed a Python-based chatbot with NLP capabilities to accelerate patent research.</p>
                         </div>
                     </div>
                     <div class="bg-gray-900 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 reveal cursor-pointer project-card flex flex-col" data-modal="modal8">
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-bold text-white mb-2">Automated Data Processing Tool</h3>
+                            <h3 class="text-xl font-bold text-white mb-2" data-key="p8_title">Automated Data Processing Tool</h3>
                             <p class="text-indigo-400 text-sm mb-2">(Python, Pandas)</p>
-                            <p class="text-gray-300 flex-grow">Automated data processing tasks, including data cleansing and transformation, using Pandas.</p>
+                            <p class="text-gray-300 flex-grow" data-key="p8_desc">Automated data processing tasks, including data cleansing and transformation, using Pandas.</p>
                         </div>
                     </div>
                     <div class="bg-gray-900 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 reveal cursor-pointer project-card flex flex-col" data-modal="modal4">
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-bold text-white mb-2">RPA SWEET Tool</h3>
+                            <h3 class="text-xl font-bold text-white mb-2" data-key="p4_title">RPA SWEET Tool</h3>
                             <p class="text-indigo-400 text-sm mb-2">(Python, RPA)</p>
-                            <p class="text-gray-300 flex-grow">Automated manual testing work using RPA, achieving significant time savings annually.</p>
+                            <p class="text-gray-300 flex-grow" data-key="p4_desc">Automated manual testing work using RPA, achieving significant time savings annually.</p>
                         </div>
                     </div>
                     <div class="bg-gray-900 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 reveal cursor-pointer project-card flex flex-col" data-modal="modal5">
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-bold text-white mb-2">RPA CR-CT Tool</h3>
+                            <h3 class="text-xl font-bold text-white mb-2" data-key="p5_title">RPA CR-CT Tool</h3>
                             <p class="text-indigo-400 text-sm mb-2">(Python, RPA)</p>
-                            <p class="text-gray-300 flex-grow">Developed a tool for automated overnight downloading of software binaries.</p>
+                            <p class="text-gray-300 flex-grow" data-key="p5_desc">Developed a tool for automated overnight downloading of software binaries.</p>
                         </div>
                     </div>
                     <div class="bg-gray-900 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 reveal cursor-pointer project-card flex flex-col" data-modal="modal6">
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-bold text-white mb-2">RPA SWC Analyst</h3>
+                            <h3 class="text-xl font-bold text-white mb-2" data-key="p6_title">RPA SWC Analyst</h3>
                             <p class="text-indigo-400 text-sm mb-2">(RPA)</p>
-                            <p class="text-gray-300 flex-grow">Analyzed scores of Samsung Professional coding tests and provided recommendations.</p>
+                            <p class="text-gray-300 flex-grow" data-key="p6_desc">Analyzed scores of Samsung Professional coding tests and provided recommendations.</p>
                         </div>
                     </div>
                 </div>
@@ -331,34 +347,34 @@
         <!-- Education Section -->
         <section id="education" class="py-20 bg-gray-800">
             <div class="container mx-auto px-6">
-                <h2 class="section-title text-3xl text-center mb-12 reveal">Education</h2>
+                <h2 class="section-title text-3xl text-center mb-12 reveal" data-key="education_title">Education</h2>
                  <div class="max-w-3xl mx-auto">
                     <div class="bg-gray-900 p-6 rounded-lg shadow-lg mb-6 reveal">
-                        <h3 class="text-xl font-semibold text-white">Master's in Computer Science</h3>
-                        <p class="text-indigo-400">Albert Ludwigs University of Freiburg</p>
-                        <p class="text-gray-400">October 2023 – Present</p>
+                        <h3 class="text-xl font-semibold text-white" data-key="edu1_title">Master's in Computer Science</h3>
+                        <p class="text-indigo-400" data-key="edu1_uni">Albert Ludwigs University of Freiburg</p>
+                        <p class="text-gray-400" data-key="edu1_date">October 2023 – Present</p>
                         <div class="mt-4">
-                            <h4 class="text-lg font-semibold text-white mb-2">Key Courses:</h4>
+                            <h4 class="text-lg font-semibold text-white mb-2" data-key="edu1_courses_title">Key Courses:</h4>
                             <ul class="list-disc list-inside text-gray-300 space-y-1">
-                                <li>Foundations of Artificial Intelligence</li>
-                                <li>Foundations of Deep Learning</li>
-                                <li>Advanced Computer Graphics</li>
-                                <li>High-Performance Computing</li>
-                                <li>Information Retrieval</li>
-                                <li>Soft Robotics</li>
-                                <li>Deep Learning Lab</li>
-                                <li>AutoML</li>
+                                <li data-key="edu1_course1">Foundations of Artificial Intelligence</li>
+                                <li data-key="edu1_course2">Foundations of Deep Learning</li>
+                                <li data-key="edu1_course3">Advanced Computer Graphics</li>
+                                <li data-key="edu1_course4">High-Performance Computing</li>
+                                <li data-key="edu1_course5">Information Retrieval</li>
+                                <li data-key="edu1_course6">Soft Robotics</li>
+                                <li data-key="edu1_course7">Deep Learning Lab</li>
+                                <li data-key="edu1_course8">AutoML Lab</li>
                             </ul>
                         </div>
                     </div>
                     <div class="bg-gray-900 p-6 rounded-lg shadow-lg mb-6 reveal">
-                        <h3 class="text-xl font-semibold text-white">Bachelor's in Computer Science and Engineering</h3>
-                        <p class="text-indigo-400">Amity University Uttar Pradesh, India, Noida</p>
-                        <p class="text-gray-400">July 2017 – June 2021</p>
+                        <h3 class="text-xl font-semibold text-white" data-key="edu2_title">Bachelor's in Computer Science and Engineering</h3>
+                        <p class="text-indigo-400" data-key="edu2_uni">Amity University Uttar Pradesh, India, Noida</p>
+                        <p class="text-gray-400" data-key="edu2_date">July 2017 – June 2021</p>
                     </div>
                     <div class="bg-gray-900 p-6 rounded-lg shadow-lg reveal">
-                        <h3 class="text-xl font-semibold text-white">High School</h3>
-                        <p class="text-indigo-400">Modern School, Barakhamba Road, New Delhi</p>
+                        <h3 class="text-xl font-semibold text-white" data-key="edu3_title">High School</h3>
+                        <p class="text-indigo-400" data-key="edu3_school">Modern School, Barakhamba Road, New Delhi</p>
                     </div>
                 </div>
             </div>
@@ -367,23 +383,23 @@
         <!-- Achievements Section -->
         <section id="achievements" class="py-20 bg-gray-900">
             <div class="container mx-auto px-6">
-                <h2 class="section-title text-3xl text-center mb-12 reveal">Awards & Achievements</h2>
+                <h2 class="section-title text-3xl text-center mb-12 reveal" data-key="achievements_title">Awards & Achievements</h2>
                 <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 text-lg">
                     <div class="bg-gray-800 p-6 rounded-lg shadow-lg reveal">
-                        <h3 class="text-xl font-semibold text-white mb-3">Professional Awards</h3>
+                        <h3 class="text-xl font-semibold text-white mb-3" data-key="ach1_title">Professional Awards</h3>
                         <ul class="list-disc list-inside space-y-2 text-gray-300">
-                            <li>Samsung Best Project Award for RPA SWEET Tool</li>
-                            <li>Samsung Employee of the Quarter (Q1 & Q3 2022)</li>
-                            <li>Samsung RPA Best Team Award</li>
+                            <li data-key="ach1_item1">Samsung Best Project Award for RPA SWEET Tool</li>
+                            <li data-key="ach1_item2">Samsung Employee of the Quarter (Q1 & Q3 2022)</li>
+                            <li data-key="ach1_item3">Samsung RPA Best Team Award</li>
                         </ul>
                     </div>
                     <div class="bg-gray-800 p-6 rounded-lg shadow-lg reveal">
-                        <h3 class="text-xl font-semibold text-white mb-3">Certifications & Courses</h3>
+                        <h3 class="text-xl font-semibold text-white mb-3" data-key="ach2_title">Certifications & Courses</h3>
                         <ul class="list-disc list-inside space-y-2 text-gray-300">
-                            <li>UiPath Certified Professional Automation Developer</li>
-                            <li>Microsoft: Programming in HTML5 with JavaScript & CSS3</li>
-                            <li>Google: Digital Unlocked (Digital Marketing Expert)</li>
-                            <li>Stanford University Online: Algorithm Design and Analysis</li>
+                            <li data-key="ach2_item1">UiPath Certified Professional Automation Developer</li>
+                            <li data-key="ach2_item2">Microsoft: Programming in HTML5 with JavaScript & CSS3</li>
+                            <li data-key="ach2_item3">Google: Digital Unlocked (Digital Marketing Expert)</li>
+                            <li data-key="ach2_item4">Stanford University Online: Algorithm Design and Analysis</li>
                         </ul>
                     </div>
                 </div>
@@ -393,20 +409,20 @@
         <!-- Publications Section -->
         <section id="publications" class="py-20 bg-gray-800">
             <div class="container mx-auto px-6">
-                <h2 class="section-title text-3xl text-center mb-12 reveal">Publications</h2>
+                <h2 class="section-title text-3xl text-center mb-12 reveal" data-key="publications_title">Publications</h2>
                 <div class="max-w-3xl mx-auto space-y-6">
                     <div class="bg-gray-900 p-6 rounded-lg shadow-lg reveal">
-                        <h3 class="text-xl font-semibold text-white">A Review on Cloud Computing</h3>
-                        <p class="text-gray-400 mb-2">January 2019 - May 2019</p>
-                        <a href="https://ieeexplore.ieee.org/document/8776907" target="_blank" class="text-indigo-400 hover:underline">View on IEEE Xplore &rarr;</a>
+                        <h3 class="text-xl font-semibold text-white" data-key="pub1_title">A Review on Cloud Computing</h3>
+                        <p class="text-gray-400 mb-2" data-key="pub1_date">January 2019 - May 2019</p>
+                        <a href="https://ieeexplore.ieee.org/document/8776907" target="_blank" class="text-indigo-400 hover:underline" data-key="pub1_link">View on IEEE Xplore &rarr;</a>
                     </div>
                     <div class="bg-gray-900 p-6 rounded-lg shadow-lg reveal">
-                        <h3 class="text-xl font-semibold text-white">Cryptographic Technique for Communication System through Diffie Hellman Key Algorithm</h3>
-                        <p class="text-gray-400">December 2020 - June 2021</p>
+                        <h3 class="text-xl font-semibold text-white" data-key="pub2_title">Cryptographic Technique for Communication System through Diffie Hellman Key Algorithm</h3>
+                        <p class="text-gray-400" data-key="pub2_date">December 2020 - June 2021</p>
                     </div>
                     <div class="bg-gray-900 p-6 rounded-lg shadow-lg reveal">
-                        <h3 class="text-xl font-semibold text-white">High Performance Computers and Computational Science</h3>
-                        <p class="text-gray-400">December 2019 - April 2020</p>
+                        <h3 class="text-xl font-semibold text-white" data-key="pub3_title">High Performance Computers and Computational Science</h3>
+                        <p class="text-gray-400" data-key="pub3_date">December 2019 - April 2020</p>
                     </div>
                 </div>
             </div>
@@ -415,9 +431,9 @@
         <!-- Contact Section -->
         <section id="contact" class="py-20 bg-gray-900">
             <div class="container mx-auto px-6 text-center reveal">
-                <h2 class="section-title text-3xl mb-4">Get In Touch</h2>
-                <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">I'm currently seeking new opportunities. If you have a project in mind or just want to connect, feel free to reach out. Let's build something amazing together!</p>
-                <a href="mailto:gurmeher23@gmail.com" class="bg-indigo-600 text-white font-bold py-3 px-8 rounded-full hover:bg-indigo-700 transition-colors duration-300 text-lg">
+                <h2 class="section-title text-3xl mb-4" data-key="contact_title">Get In Touch</h2>
+                <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto" data-key="contact_text">I'm currently seeking new opportunities. If you have a project in mind or just want to connect, feel free to reach out. Let's build something amazing together!</p>
+                <a href="mailto:gurmeher23@gmail.com" class="bg-indigo-600 text-white font-bold py-3 px-8 rounded-full hover:bg-indigo-700 transition-colors duration-300 text-lg" data-key="contact_button">
                     Say Hello
                 </a>
                  <div class="mt-8 text-gray-400">
@@ -431,7 +447,7 @@
     <!-- Footer -->
     <footer class="bg-gray-800 py-6">
         <div class="container mx-auto px-6 text-center text-gray-500">
-            <p>&copy; 2025 Gurmeher Singh Puri. All Rights Reserved.</p>
+            <p data-key="footer_text">&copy; 2025 Gurmeher Singh Puri. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -439,14 +455,14 @@
     <div id="modal1" class="modal">
         <div class="modal-content">
             <span class="close-button">&times;</span>
-            <h2 class="text-2xl font-bold text-white mb-4">Electricity Carbon Intensity Prediction</h2>
-            <p class="text-gray-300 leading-relaxed">
+            <h2 class="text-2xl font-bold text-white mb-4" data-key="p1_title_modal">Electricity Carbon Intensity Prediction</h2>
+            <p class="text-gray-300 leading-relaxed" data-key="p1_desc_modal">
                 This master's project involved developing a machine learning system to predict electricity grid carbon emission intensities across Germany. The system addresses the critical challenge of forecasting carbon footprint variations in Germany's energy landscape, where renewable sources create significant daily and seasonal fluctuations.
                 <br><br>
-                <strong>Key achievements:</strong>
+                <strong data-key="p_modal_key_achievements">Key achievements:</strong>
                 <ul class="list-disc list-inside mt-2 text-gray-300">
-                    <li>Integrated data from multiple European energy sources, including the ENTSO-E transparency platform and CO2map.de.</li>
-                    <li>Employed AutoGluon's automated ensemble framework with LightGBM, CatBoost, and XGBoost to balance prediction accuracy with deployment requirements.</li>
+                    <li data-key="p1_ach1_modal">Integrated data from multiple European energy sources, including the ENTSO-E transparency platform and CO2map.de.</li>
+                    <li data-key="p1_ach2_modal">Employed AutoGluon's automated ensemble framework with LightGBM, CatBoost, and XGBoost to balance prediction accuracy with deployment requirements.</li>
                 </ul>
             </p>
         </div>
@@ -455,8 +471,8 @@
     <div id="modal2" class="modal">
         <div class="modal-content">
             <span class="close-button">&times;</span>
-            <h2 class="text-2xl font-bold text-white mb-4">Predicting Algorithm Runtime with TabPFN</h2>
-            <p class="text-gray-300 leading-relaxed">
+            <h2 class="text-2xl font-bold text-white mb-4" data-key="p2_title_modal">Predicting Algorithm Runtime with TabPFN</h2>
+            <p class="text-gray-300 leading-relaxed" data-key="p2_desc_modal">
                 This research project investigated whether a general-purpose model, TabPFN, could effectively predict algorithm runtime distributions (RTD), a specialized prediction problem. The goal was to evaluate how well TabPFN v2 can model the uncertainty and variability of algorithm runtimes compared to a specialized deep learning model, DistNet.
             </p>
         </div>
@@ -465,8 +481,8 @@
     <div id="modal3" class="modal">
         <div class="modal-content">
             <span class="close-button">&times;</span>
-            <h2 class="text-2xl font-bold text-white mb-4">Automation Process Tool</h2>
-            <p class="text-gray-300 leading-relaxed">
+            <h2 class="text-2xl font-bold text-white mb-4" data-key="p3_title_modal">Automation Process Tool</h2>
+            <p class="text-gray-300 leading-relaxed" data-key="p3_desc_modal">
                 Developed as an internal R&D tool at Samsung to streamline the testing and validation pipeline. It automated the process of uploading device test images to a central storage (MinIO), which then triggered analysis workflows via Airflow, significantly reducing manual overhead for the QA teams.
             </p>
         </div>
@@ -475,8 +491,8 @@
     <div id="modal7" class="modal">
         <div class="modal-content">
             <span class="close-button">&times;</span>
-            <h2 class="text-2xl font-bold text-white mb-4">Chatbot for Research Assistance</h2>
-            <p class="text-gray-300 leading-relaxed">
+            <h2 class="text-2xl font-bold text-white mb-4" data-key="p7_title_modal">Chatbot for Research Assistance</h2>
+            <p class="text-gray-300 leading-relaxed" data-key="p7_desc_modal">
                 Created as a key internal project at Samsung to help engineers meet their KPI for filing patents. The chatbot used NLP to allow researchers to quickly search through vast databases of academic papers and technical documents, finding relevant prior art and innovative ideas on specific topics, thereby accelerating the patent research process.
             </p>
         </div>
@@ -485,8 +501,8 @@
     <div id="modal8" class="modal">
         <div class="modal-content">
             <span class="close-button">&times;</span>
-            <h2 class="text-2xl font-bold text-white mb-4">Automated Data Processing Tool</h2>
-            <p class="text-gray-300 leading-relaxed">
+            <h2 class="text-2xl font-bold text-white mb-4" data-key="p8_title_modal">Automated Data Processing Tool</h2>
+            <p class="text-gray-300 leading-relaxed" data-key="p8_desc_modal">
                 Built to handle the massive influx of data from device performance tests at Samsung. The tool automated critical data processing tasks, including cleansing corrupted log files and transforming raw sensor data into a structured format for analysis, saving hundreds of hours for the data engineering team.
             </p>
         </div>
@@ -495,8 +511,8 @@
     <div id="modal4" class="modal">
         <div class="modal-content">
             <span class="close-button">&times;</span>
-            <h2 class="text-2xl font-bold text-white mb-4">RPA SWEET Tool</h2>
-            <p class="text-gray-300 leading-relaxed">
+            <h2 class="text-2xl font-bold text-white mb-4" data-key="p4_title_modal">RPA SWEET Tool</h2>
+            <p class="text-gray-300 leading-relaxed" data-key="p4_desc_modal">
                 Automated testing manual work using Robotic Process Automation (RPA), saving over 120,000 hours for the company on a yearly basis. This project involved analyzing existing manual workflows and developing robust automation scripts to handle repetitive testing tasks, leading to a massive increase in efficiency and allowing human testers to focus on more complex quality assurance challenges.
             </p>
         </div>
@@ -505,8 +521,8 @@
     <div id="modal5" class="modal">
         <div class="modal-content">
             <span class="close-button">&times;</span>
-            <h2 class="text-2xl font-bold text-white mb-4">RPA CR-CT Tool</h2>
-            <p class="text-gray-300 leading-relaxed">
+            <h2 class="text-2xl font-bold text-white mb-4" data-key="p5_title_modal">RPA CR-CT Tool</h2>
+            <p class="text-gray-300 leading-relaxed" data-key="p5_desc_modal">
                 Developed a tool for downloading software binaries overnight using RPA. This automation saved 9,200 hours yearly by eliminating the need for engineers to manually download and manage large software files, ensuring that the latest versions were always ready for testing and development each morning.
             </p>
         </div>
@@ -515,8 +531,8 @@
     <div id="modal6" class="modal">
         <div class="modal-content">
             <span class="close-button">&times;</span>
-            <h2 class="text-2xl font-bold text-white mb-4">RPA SWC Analyst</h2>
-            <p class="text-gray-300 leading-relaxed">
+            <h2 class="text-2xl font-bold text-white mb-4" data-key="p6_title_modal">RPA SWC Analyst</h2>
+            <p class="text-gray-300 leading-relaxed" data-key="p6_desc_modal">
                 Created an RPA-based system to analyze the scores of Samsung Professional coding tests. The tool automatically processed test results, generated performance reports, and provided data-driven recommendations, saving 20,000 hours of manual analysis work yearly and helping to standardize the evaluation process.
             </p>
         </div>
@@ -525,18 +541,259 @@
 
     <!-- JavaScript for Animations and Interactions -->
     <script>
-        // Typed.js functionality for the hero section
-        const words = ["Research & Development Enthusiast.", "Software Engineer.", "AI Practitioner."];
-        let i = 0;
-        let j = 0;
-        let currentWord = "";
-        let isDeleting = false;
-        const typedTextSpan = document.getElementById("typed-text");
-        const cursorSpan = document.createElement('span');
-        cursorSpan.classList.add('typed-cursor');
-        cursorSpan.textContent = '|';
-        typedTextSpan.parentNode.insertBefore(cursorSpan, typedTextSpan.nextSibling);
+        // Language content
+        const translations = {
+            en: {
+                nav_about: "About",
+                nav_experience: "Experience",
+                nav_projects: "Projects",
+                nav_education: "Education",
+                nav_achievements: "Achievements",
+                nav_publications: "Publications",
+                nav_contact: "Contact",
+                nav_about_mobile: "About",
+                nav_experience_mobile: "Experience",
+                nav_projects_mobile: "Projects",
+                nav_education_mobile: "Education",
+                nav_achievements_mobile: "Achievements",
+                nav_publications_mobile: "Publications",
+                nav_contact_mobile: "Contact",
+                hero_title: "I'm Gurmeher Singh Puri",
+                hero_i_am: "A",
+                hero_subtitle: "4th-semester master's student in Computer Science with a focus on Artificial Intelligence, based in Freiburg, Germany.",
+                hero_cv_button: "Download CV",
+                about_title: "About Me",
+                about_text: "I am a 4th-semester master's student in Computer Science with a focus on Artificial Intelligence at the University of Freiburg. Currently working as a Work Student at Fraunhofer ISE, Freiburg, with a background as a Software Engineer at Samsung R&D Institute. Expertise in software development, automation testing, and various programming languages. Seeking opportunities to enhance skills and knowledge, preferably in a tech lead role.",
+                experience_title: "Work Experience",
+                exp1_title: "Working Student",
+                exp1_date: "March 2024 – Present",
+                exp1_desc1: "Developed the Spotlob project, an image processing library for automated detection tasks.",
+                exp1_desc2: "Applied machine learning models for defect detection in solar cells, improving analysis accuracy.",
+                exp1_desc3: "Automated workflows using Apache Airflow, MinIO, and Flask.",
+                exp2_title: "Master Project Student",
+                exp2_date: "December 2024 – July 2025",
+                exp2_desc1: "Developed a machine learning system for predicting electricity grid carbon emission intensities across Germany using AutoML.",
+                exp2_desc2: "Integrated data from ENTSO-E and CO2map.de, covering generation forecasts, cross-border trading, and carbon intensity measurements.",
+                exp3_title: "Software Engineer",
+                exp3_date: "August 2021 – September 2023",
+                exp3_desc1: "Developed 12 tools and websites using JavaScript, Python, and RPA.",
+                exp3_desc2: "Managed smoke executions on 1000+ devices using CI/CD tools.",
+                exp4_title: "Software Engineer Intern",
+                exp4_date: "January 2021 – July 2021",
+                exp4_desc1: "Developed 2 websites using JavaScript, Python, and CSS.",
+                exp4_desc2: "Participated in Samsung Knox automation test case development.",
+                exp5_title: "Web Developer Intern",
+                exp5_date: "May 2019 – July 2019",
+                exp5_desc1: 'Developed a basic website called "Student Tracker" using Eclipse and Tomcat Server 9.0.',
+                projects_title: "Projects",
+                p1_title: "Electricity Carbon Intensity Prediction",
+                p1_desc: "Developed a system to forecast electricity carbon intensity in Germany using AutoGluon.",
+                p2_title: "Predicting Algorithm Runtime with TabPFN",
+                p2_desc: "Investigated the use of TabPFN to predict algorithm runtime distributions against specialized models.",
+                p3_title: "Automation Process Tool",
+                p3_desc: "Automates project workflows by integrating Airflow, MinIO, and Flask for streamlined processes.",
+                p7_title: "Chatbot for Research Assistance",
+                p7_desc: "Developed a Python-based chatbot with NLP capabilities to accelerate patent research.",
+                p8_title: "Automated Data Processing Tool",
+                p8_desc: "Automated data processing tasks, including data cleansing and transformation, using Pandas.",
+                p4_title: "RPA SWEET Tool",
+                p4_desc: "Automated manual testing work using RPA, achieving significant time savings annually.",
+                p5_title: "RPA CR-CT Tool",
+                p5_desc: "Developed a tool for automated overnight downloading of software binaries.",
+                p6_title: "RPA SWC Analyst",
+                p6_desc: "Analyzed scores of Samsung Professional coding tests and provided recommendations.",
+                education_title: "Education",
+                edu1_title: "Master's in Computer Science",
+                edu1_uni: "Albert Ludwigs University of Freiburg",
+                edu1_date: "October 2023 – Present",
+                edu1_courses_title: "Key Courses:",
+                edu1_course1: "Foundations of Artificial Intelligence",
+                edu1_course2: "Foundations of Deep Learning",
+                edu1_course3: "Advanced Computer Graphics",
+                edu1_course4: "High-Performance Computing",
+                edu1_course5: "Information Retrieval",
+                edu1_course6: "Soft Robotics",
+                edu1_course7: "Deep Learning Lab",
+                edu1_course8: "AutoML Lab",
+                edu2_title: "Bachelor's in Computer Science and Engineering",
+                edu2_uni: "Amity University Uttar Pradesh, India, Noida",
+                edu2_date: "July 2017 – June 2021",
+                edu3_title: "High School",
+                edu3_school: "Modern School, Barakhamba Road, New Delhi",
+                achievements_title: "Awards & Achievements",
+                ach1_title: "Professional Awards",
+                ach1_item1: "Samsung Best Project Award for RPA SWEET Tool",
+                ach1_item2: "Samsung Employee of the Quarter (Q1 & Q3 2022)",
+                ach1_item3: "Samsung RPA Best Team Award",
+                ach2_title: "Certifications & Courses",
+                ach2_item1: "UiPath Certified Professional Automation Developer",
+                ach2_item2: "Microsoft: Programming in HTML5 with JavaScript & CSS3",
+                ach2_item3: "Google: Digital Unlocked (Digital Marketing Expert)",
+                ach2_item4: "Stanford University Online: Algorithm Design and Analysis",
+                publications_title: "Publications",
+                pub1_title: "A Review on Cloud Computing",
+                pub1_date: "January 2019 - May 2019",
+                pub1_link: "View on IEEE Xplore &rarr;",
+                pub2_title: "Cryptographic Technique for Communication System through Diffie Hellman Key Algorithm",
+                pub2_date: "December 2020 - June 2021",
+                pub3_title: "High Performance Computers and Computational Science",
+                pub3_date: "December 2019 - April 2020",
+                contact_title: "Get In Touch",
+                contact_text: "I'm currently seeking new opportunities. If you have a project in mind or just want to connect, feel free to reach out. Let's build something amazing together!",
+                contact_button: "Say Hello",
+                footer_text: "© 2025 Gurmeher Singh Puri. All Rights Reserved.",
+                p_modal_key_achievements: "Key achievements:",
+                p1_title_modal: "Electricity Carbon Intensity Prediction",
+                p1_desc_modal: "This master's project involved developing a machine learning system to predict electricity grid carbon emission intensities across Germany. The system addresses the critical challenge of forecasting carbon footprint variations in Germany's energy landscape, where renewable sources create significant daily and seasonal fluctuations.",
+                p1_ach1_modal: "Integrated data from multiple European energy sources, including the ENTSO-E transparency platform and CO2map.de.",
+                p1_ach2_modal: "Employed AutoGluon's automated ensemble framework with LightGBM, CatBoost, and XGBoost to balance prediction accuracy with deployment requirements.",
+                p2_title_modal: "Predicting Algorithm Runtime with TabPFN",
+                p2_desc_modal: "This research project investigated whether a general-purpose model, TabPFN, could effectively predict algorithm runtime distributions (RTD), a specialized prediction problem. The goal was to evaluate how well TabPFN v2 can model the uncertainty and variability of algorithm runtimes compared to a specialized deep learning model, DistNet.",
+                p3_title_modal: "Automation Process Tool",
+                p3_desc_modal: "Developed as an internal R&D tool at Samsung to streamline the testing and validation pipeline. It automated the process of uploading device test images to a central storage (MinIO), which then triggered analysis workflows via Airflow, significantly reducing manual overhead for the QA teams.",
+                p7_title_modal: "Chatbot for Research Assistance",
+                p7_desc_modal: "Created as a key internal project at Samsung to help engineers meet their KPI for filing patents. The chatbot used NLP to allow researchers to quickly search through vast databases of academic papers and technical documents, finding relevant prior art and innovative ideas on specific topics, thereby accelerating the patent research process.",
+                p8_title_modal: "Automated Data Processing Tool",
+                p8_desc_modal: "Built to handle the massive influx of data from device performance tests at Samsung. The tool automated critical data processing tasks, including cleansing corrupted log files and transforming raw sensor data into a structured format for analysis, saving hundreds of hours for the data engineering team.",
+                p4_title_modal: "RPA SWEET Tool",
+                p4_desc_modal: "Automated testing manual work using Robotic Process Automation (RPA), saving over 120,000 hours for the company on a yearly basis. This project involved analyzing existing manual workflows and developing robust automation scripts to handle repetitive testing tasks, leading to a massive increase in efficiency and allowing human testers to focus on more complex quality assurance challenges.",
+                p5_title_modal: "RPA CR-CT Tool",
+                p5_desc_modal: "Developed a tool for downloading software binaries overnight using RPA. This automation saved 9,200 hours yearly by eliminating the need for engineers to manually download and manage large software files, ensuring that the latest versions were always ready for testing and development each morning.",
+                p6_title_modal: "RPA SWC Analyst",
+                p6_desc_modal: "Created an RPA-based system to analyze the scores of Samsung Professional coding tests. The tool automatically processed test results, generated performance reports, and provided data-driven recommendations, saving 20,000 hours of manual analysis work yearly and helping to standardize the evaluation process.",
+            },
+            de: {
+                nav_about: "Über mich",
+                nav_experience: "Berufserfahrung",
+                nav_projects: "Projekte",
+                nav_education: "Ausbildung",
+                nav_achievements: "Auszeichnungen",
+                nav_publications: "Veröffentlichungen",
+                nav_contact: "Kontakt",
+                nav_about_mobile: "Über mich",
+                nav_experience_mobile: "Berufserfahrung",
+                nav_projects_mobile: "Projekte",
+                nav_education_mobile: "Ausbildung",
+                nav_achievements_mobile: "Auszeichnungen",
+                nav_publications_mobile: "Veröffentlichungen",
+                nav_contact_mobile: "Kontakt",
+                hero_title: "Ich bin Gurmeher Singh Puri",
+                hero_i_am: "Ein",
+                hero_subtitle: "Masterstudent im 4. Semester in Informatik mit Schwerpunkt auf Künstlicher Intelligenz, ansässig in Freiburg.",
+                hero_cv_button: "Lebenslauf herunterladen",
+                about_title: "Über mich",
+                about_text: "Ich bin Masterstudent im 4. Semester in Informatik mit Schwerpunkt Künstliche Intelligenz an der Universität Freiburg. Derzeit arbeite ich als Werkstudent am Fraunhofer ISE in Freiburg und habe einen Hintergrund als Softwareentwickler am Samsung R&D Institute. Meine Expertise liegt in der Softwareentwicklung, im automatisierten Testen und in verschiedenen Programmiersprachen. Ich suche nach Möglichkeiten, meine Fähigkeiten und Kenntnisse zu erweitern, vorzugsweise in einer technischen Führungsrolle.",
+                experience_title: "Berufserfahrung",
+                exp1_title: "Werkstudent",
+                exp1_date: "März 2024 – Heute",
+                exp1_desc1: "Entwicklung des Spotlob-Projekts, einer Bildverarbeitungsbibliothek zur Automatisierung von Erkennungsaufgaben.",
+                exp1_desc2: "Anwendung von Machine-Learning-Modellen zur Fehlererkennung in Solarzellen, was die Analysegenauigkeit verbessert.",
+                exp1_desc3: "Automatisierung von Arbeitsabläufen mit Apache Airflow, MinIO und Flask.",
+                exp2_title: "Master-Projektstudent",
+                exp2_date: "Dezember 2024 – Juli 2025",
+                exp2_desc1: "Entwicklung eines maschinellen Lernsystems zur Vorhersage der Kohlenstoffemissionsintensität des Stromnetzes in Deutschland mittels AutoML.",
+                exp2_desc2: "Integration von Daten von ENTSO-E und CO2map.de, die Erzeugungsprognosen, grenzüberschreitenden Handel und Kohlenstoffintensitätsmessungen umfassen.",
+                exp3_title: "Softwareingenieur",
+                exp3_date: "August 2021 – September 2023",
+                exp3_desc1: "Entwicklung von 12 Tools und Websites mit JavaScript, Python und RPA.",
+                exp3_desc2: "Verwaltung von Smoke-Executions auf über 1000 Geräten mit CI/CD-Tools.",
+                exp4_title: "Praktikant Softwareentwicklung",
+                exp4_date: "Januar 2021 – Juli 2021",
+                exp4_desc1: "Entwicklung von 2 Websites mit JavaScript, Python und CSS.",
+                exp4_desc2: "Mitarbeit an der Entwicklung von automatisierten Testfällen für Samsung Knox.",
+                exp5_title: "Praktikant Webentwicklung",
+                exp5_date: "Mai 2019 – Juli 2019",
+                exp5_desc1: 'Entwicklung einer einfachen Website namens "Student Tracker" mit Eclipse und Tomcat Server 9.0.',
+                projects_title: "Projekte",
+                p1_title: "Prognose der Kohlenstoffintensität von Strom",
+                p1_desc: "Entwicklung eines Systems zur Prognose der Kohlenstoffintensität von Strom in Deutschland mit AutoGluon.",
+                p2_title: "Vorhersage der Algorithmuslaufzeit mit TabPFN",
+                p2_desc: "Untersuchung der Verwendung von TabPFN zur Vorhersage von Algorithmus-Laufzeitverteilungen im Vergleich zu spezialisierten Modellen.",
+                p3_title: "Automatisierungsprozess-Tool",
+                p3_desc: "Automatisiert Projekt-Workflows durch die Integration von Airflow, MinIO und Flask für optimierte Prozesse.",
+                p7_title: "Chatbot für die Forschungsunterstützung",
+                p7_desc: "Entwicklung eines Python-basierten Chatbots mit NLP-Fähigkeiten zur Beschleunigung der Patentrecherche.",
+                p8_title: "Automatisiertes Datenverarbeitungstool",
+                p8_desc: "Automatisierte Datenverarbeitungsaufgaben, einschließlich Datenbereinigung und -transformation, mit Pandas.",
+                p4_title: "RPA SWEET Tool",
+                p4_desc: "Automatisierte manuelle Testarbeiten mit RPA, was zu erheblichen jährlichen Zeiteinsparungen führte.",
+                p5_title: "RPA CR-CT Tool",
+                p5_desc: "Entwicklung eines Tools zum automatisierten Herunterladen von Software-Binärdateien über Nacht.",
+                p6_title: "RPA SWC Analyst",
+                p6_desc: "Analyse der Ergebnisse von Samsung Professional Coding Tests und Erstellung von Empfehlungen.",
+                education_title: "Ausbildung",
+                edu1_title: "Master in Informatik",
+                edu1_uni: "Albert-Ludwigs-Universität Freiburg",
+                edu1_date: "Oktober 2023 – Heute",
+                edu1_courses_title: "Schwerpunktkurse:",
+                edu1_course1: "Grundlagen der Künstlichen Intelligenz",
+                edu1_course2: "Grundlagen des Deep Learning",
+                edu1_course3: "Fortgeschrittene Computergrafik",
+                edu1_course4: "High-Performance Computing",
+                edu1_course5: "Informationsrückgewinnung",
+                edu1_course6: "Soft-Robotik",
+                edu1_course7: "Deep Learning Labor",
+                edu1_course8: "AutoML Labor",
+                edu2_title: "Bachelor in Informatik und Ingenieurwesen",
+                edu2_uni: "Amity University Uttar Pradesh, Indien, Noida",
+                edu2_date: "Juli 2017 – Juni 2021",
+                edu3_title: "Gymnasium",
+                edu3_school: "Modern School, Barakhamba Road, Neu-Delhi",
+                achievements_title: "Auszeichnungen & Erfolge",
+                ach1_title: "Berufliche Auszeichnungen",
+                ach1_item1: "Samsung Best Project Award für RPA SWEET Tool",
+                ach1_item2: "Samsung Mitarbeiter des Quartals (Q1 & Q3 2022)",
+                ach1_item3: "Samsung RPA Best Team Award",
+                ach2_title: "Zertifizierungen & Kurse",
+                ach2_item1: "UiPath Certified Professional Automation Developer",
+                ach2_item2: "Microsoft: Programmierung in HTML5 mit JavaScript & CSS3",
+                ach2_item3: "Google: Digital Unlocked (Experte für digitales Marketing)",
+                ach2_item4: "Stanford University Online: Algorithmenentwurf und -analyse",
+                publications_title: "Veröffentlichungen",
+                pub1_title: "Ein Überblick über Cloud Computing",
+                pub1_date: "Januar 2019 - Mai 2019",
+                pub1_link: "Auf IEEE Xplore ansehen &rarr;",
+                pub2_title: "Kryptographische Technik für Kommunikationssysteme durch den Diffie-Hellman-Schlüsselalgorithmus",
+                pub2_date: "Dezember 2020 - Juni 2021",
+                pub3_title: "Hochleistungsrechner und computergestützte Wissenschaft",
+                pub3_date: "Dezember 2019 - April 2020",
+                contact_title: "Kontakt aufnehmen",
+                contact_text: "Ich bin derzeit auf der Suche nach neuen Möglichkeiten. Wenn Sie ein Projekt im Sinn haben oder einfach nur in Kontakt treten möchten, zögern Sie nicht, sich zu melden. Lassen Sie uns gemeinsam etwas Erstaunliches schaffen!",
+                contact_button: "Hallo sagen",
+                footer_text: "© 2025 Gurmeher Singh Puri. Alle Rechte vorbehalten.",
+                p_modal_key_achievements: "Wichtige Erfolge:",
+                p1_title_modal: "Prognose der Kohlenstoffintensität von Strom",
+                p1_desc_modal: "Dieses Masterprojekt umfasste die Entwicklung eines maschinellen Lernsystems zur Vorhersage der Kohlenstoffemissionsintensität des Stromnetzes in ganz Deutschland. Das System begegnet der entscheidenden Herausforderung, Schwankungen des CO2-Fußabdrucks in der deutschen Energielandschaft vorherzusagen, wo erneuerbare Quellen erhebliche tägliche und saisonale Schwankungen verursachen.",
+                p1_ach1_modal: "Integrierte Daten aus mehreren europäischen Energiequellen, einschließlich der ENTSO-E-Transparenzplattform und CO2map.de.",
+                p1_ach2_modal: "Einsatz des automatisierten Ensemble-Frameworks von AutoGluon mit LightGBM, CatBoost und XGBoost, um Vorhersagegenauigkeit und Bereitstellungsanforderungen in Einklang zu bringen.",
+                p2_title_modal: "Vorhersage der Algorithmuslaufzeit mit TabPFN",
+                p2_desc_modal: "Dieses Forschungsprojekt untersuchte, ob ein Allzweckmodell, TabPFN, die Laufzeitverteilungen von Algorithmen (RTD), ein spezielles Vorhersageproblem, effektiv vorhersagen kann. Ziel war es, zu bewerten, wie gut TabPFN v2 die Unsicherheit und Variabilität von Algorithmuslaufzeiten im Vergleich zu einem spezialisierten Deep-Learning-Modell, DistNet, modellieren kann.",
+                p3_title_modal: "Automatisierungsprozess-Tool",
+                p3_desc_modal: "Entwickelt als internes F&E-Tool bei Samsung zur Rationalisierung der Test- und Validierungspipeline. Es automatisierte den Prozess des Hochladens von Gerätetestbildern in einen zentralen Speicher (MinIO), was dann Analyse-Workflows über Airflow auslöste und den manuellen Aufwand für die QS-Teams erheblich reduzierte.",
+                p7_title_modal: "Chatbot für die Forschungsunterstützung",
+                p7_desc_modal: "Erstellt als wichtiges internes Projekt bei Samsung, um Ingenieuren zu helfen, ihre KPI für die Einreichung von Patenten zu erfüllen. Der Chatbot nutzte NLP, um Forschern zu ermöglichen, schnell riesige Datenbanken mit wissenschaftlichen Arbeiten und technischen Dokumenten zu durchsuchen, um relevante frühere Techniken und innovative Ideen zu bestimmten Themen zu finden und so den Patentrechercheprozess zu beschleunigen.",
+                p8_title_modal: "Automatisiertes Datenverarbeitungstool",
+                p8_desc_modal: "Entwickelt, um den massiven Zustrom von Daten aus Leistungstests von Geräten bei Samsung zu bewältigen. Das Tool automatisierte kritische Datenverarbeitungsaufgaben, einschließlich der Bereinigung beschädigter Protokolldateien und der Umwandlung von Roh-Sensordaten in ein strukturiertes Format für die Analyse, wodurch Hunderte von Stunden für das Datentechnik-Team eingespart wurden.",
+                p4_title_modal: "RPA SWEET Tool",
+                p4_desc_modal: "Automatisierte manuelle Testarbeiten mit Robotic Process Automation (RPA), wodurch dem Unternehmen jährlich über 120.000 Stunden eingespart wurden. Dieses Projekt umfasste die Analyse bestehender manueller Arbeitsabläufe und die Entwicklung robuster Automatisierungsskripte zur Bewältigung sich wiederholender Testaufgaben, was zu einer massiven Effizienzsteigerung führte und es menschlichen Testern ermöglichte, sich auf komplexere Qualitätssicherungsherausforderungen zu konzentrieren.",
+                p5_title_modal: "RPA CR-CT Tool",
+                p5_desc_modal: "Entwickelte ein Tool zum Herunterladen von Software-Binärdateien über Nacht mit RPA. Diese Automatisierung sparte jährlich 9.200 Stunden, da Ingenieure große Software-Dateien nicht mehr manuell herunterladen und verwalten mussten, wodurch sichergestellt wurde, dass die neuesten Versionen jeden Morgen für Tests und Entwicklung bereitstanden.",
+                p6_title_modal: "RPA SWC Analyst",
+                p6_desc_modal: "Erstellte ein RPA-basiertes System zur Analyse der Ergebnisse von Samsung Professional Coding Tests. Das Tool verarbeitete automatisch Testergebnisse, erstellte Leistungsberichte und gab datengesteuerte Empfehlungen, wodurch jährlich 20.000 Stunden manuelle Analysearbeit eingespart und der Bewertungsprozess standardisiert wurde.",
+            }
+        };
 
+        const typedWords = {
+            en: ["a Research & Development Enthusiast.", "a Software Engineer.", "an AI Practitioner."],
+            de: ["ein Forschungs- & Entwicklungs-Enthusiast.", "ein Softwareentwickler.", "ein KI-Praktiker."]
+        };
+
+        let currentLang = 'en';
+        let words = typedWords.en;
+        let i = 0, j = 0, currentWord = "", isDeleting = false;
+        const typedTextSpan = document.getElementById("typed-text");
+
+        // Typed.js functionality
         function type() {
             currentWord = words[i];
             if (isDeleting) {
@@ -545,23 +802,56 @@
                 if (j === 0) {
                     isDeleting = false;
                     i++;
-                    if (i === words.length) {
-                        i = 0;
-                    }
+                    if (i === words.length) i = 0;
                 }
             } else {
                 typedTextSpan.textContent = currentWord.substring(0, j + 1);
                 j++;
                 if (j === currentWord.length) {
                     isDeleting = true;
-                    setTimeout(type, 2000); // Pause at end of word
+                    setTimeout(type, 2000);
                     return;
                 }
             }
             setTimeout(type, isDeleting ? 50 : 150);
         }
-        
+
+        // Language switcher function
+        function switchLanguage(lang) {
+            currentLang = lang;
+            document.querySelectorAll('[data-key]').forEach(elem => {
+                const key = elem.getAttribute('data-key');
+                if (translations[lang][key]) {
+                    elem.innerHTML = translations[lang][key];
+                }
+            });
+
+            // Update CV download link
+            const cvLink = document.getElementById('cv-download');
+            if (lang === 'de') {
+                cvLink.href = 'Gurmeher_Resume_DE.pdf';
+                cvLink.download = 'Gurmeher_Puri_Lebenslauf.pdf';
+            } else {
+                cvLink.href = 'Gurmeher_Resume.pdf';
+                cvLink.download = 'Gurmeher_Puri_Resume.pdf';
+            }
+            
+            // Update active language button style
+            document.querySelectorAll('.lang-switch button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`lang-${lang}`).classList.add('active');
+            document.getElementById(`lang-${lang}-mobile`).classList.add('active');
+
+            // Restart typing animation with new words
+            words = typedWords[lang];
+            i = 0; j = 0; isDeleting = false;
+            typedTextSpan.textContent = "";
+        }
+
         document.addEventListener("DOMContentLoaded", function() { 
+            const cursorSpan = document.createElement('span');
+            cursorSpan.classList.add('typed-cursor');
+            cursorSpan.textContent = '|';
+            typedTextSpan.parentNode.insertBefore(cursorSpan, typedTextSpan.nextSibling);
             setTimeout(type, 1000);
         });
 
