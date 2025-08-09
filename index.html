@@ -268,7 +268,6 @@
             <div class="container mx-auto px-6">
                 <h2 class="section-title text-3xl text-center mb-12 reveal">Projects</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Project 1 -->
                     <div class="bg-gray-900 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 reveal cursor-pointer project-card flex flex-col" data-modal="modal1">
                         <div class="p-6 flex flex-col flex-grow">
                             <h3 class="text-xl font-bold text-white mb-2">Electricity Carbon Intensity Prediction</h3>
@@ -276,7 +275,6 @@
                             <p class="text-gray-300 flex-grow">Developed a system to forecast electricity carbon intensity in Germany using AutoGluon.</p>
                         </div>
                     </div>
-                    <!-- Project 2 -->
                     <div class="bg-gray-900 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 reveal cursor-pointer project-card flex flex-col" data-modal="modal2">
                          <div class="p-6 flex flex-col flex-grow">
                             <h3 class="text-xl font-bold text-white mb-2">Predicting Algorithm Runtime with TabPFN</h3>
@@ -284,7 +282,6 @@
                             <p class="text-gray-300 flex-grow">Investigated the use of TabPFN to predict algorithm runtime distributions against specialized models.</p>
                         </div>
                     </div>
-                    <!-- Project 3 -->
                     <div class="bg-gray-900 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 reveal cursor-pointer project-card flex flex-col" data-modal="modal3">
                         <div class="p-6 flex flex-col flex-grow">
                             <h3 class="text-xl font-bold text-white mb-2">Automation Process Tool</h3>
@@ -292,7 +289,20 @@
                             <p class="text-gray-300 flex-grow">Automates project workflows by integrating Airflow, MinIO, and Flask for streamlined processes.</p>
                         </div>
                     </div>
-                    <!-- Project 4 -->
+                    <div class="bg-gray-900 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 reveal cursor-pointer project-card flex flex-col" data-modal="modal7">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-white mb-2">Chatbot for Research Assistance</h3>
+                            <p class="text-indigo-400 text-sm mb-2">(Python, NLP, NLTK, spaCy)</p>
+                            <p class="text-gray-300 flex-grow">Developed a Python-based chatbot with NLP capabilities to accelerate patent research.</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 reveal cursor-pointer project-card flex flex-col" data-modal="modal8">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-white mb-2">Automated Data Processing Tool</h3>
+                            <p class="text-indigo-400 text-sm mb-2">(Python, Pandas)</p>
+                            <p class="text-gray-300 flex-grow">Automated data processing tasks, including data cleansing and transformation, using Pandas.</p>
+                        </div>
+                    </div>
                     <div class="bg-gray-900 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 reveal cursor-pointer project-card flex flex-col" data-modal="modal4">
                         <div class="p-6 flex flex-col flex-grow">
                             <h3 class="text-xl font-bold text-white mb-2">RPA SWEET Tool</h3>
@@ -300,7 +310,6 @@
                             <p class="text-gray-300 flex-grow">Automated manual testing work using RPA, achieving significant time savings annually.</p>
                         </div>
                     </div>
-                    <!-- Project 5 -->
                     <div class="bg-gray-900 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 reveal cursor-pointer project-card flex flex-col" data-modal="modal5">
                         <div class="p-6 flex flex-col flex-grow">
                             <h3 class="text-xl font-bold text-white mb-2">RPA CR-CT Tool</h3>
@@ -308,7 +317,6 @@
                             <p class="text-gray-300 flex-grow">Developed a tool for automated overnight downloading of software binaries.</p>
                         </div>
                     </div>
-                    <!-- Project 6 -->
                     <div class="bg-gray-900 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 reveal cursor-pointer project-card flex flex-col" data-modal="modal6">
                         <div class="p-6 flex flex-col flex-grow">
                             <h3 class="text-xl font-bold text-white mb-2">RPA SWC Analyst</h3>
@@ -339,7 +347,7 @@
                                 <li>Information Retrieval</li>
                                 <li>Soft Robotics</li>
                                 <li>Deep Learning Lab</li>
-                                <li>AutoML</li>
+                                <li>AutoML Lab</li>
                             </ul>
                         </div>
                     </div>
@@ -438,7 +446,6 @@
                 <strong>Key achievements:</strong>
                 <ul class="list-disc list-inside mt-2 text-gray-300">
                     <li>Integrated data from multiple European energy sources, including the ENTSO-E transparency platform and CO2map.de.</li>
-                    <li>Processed data from over twenty-two cross-border electricity connections to capture complex interactions influencing German electricity carbon intensity.</li>
                     <li>Employed AutoGluon's automated ensemble framework with LightGBM, CatBoost, and XGBoost to balance prediction accuracy with deployment requirements.</li>
                 </ul>
             </p>
@@ -451,12 +458,6 @@
             <h2 class="text-2xl font-bold text-white mb-4">Predicting Algorithm Runtime with TabPFN</h2>
             <p class="text-gray-300 leading-relaxed">
                 This research project investigated whether a general-purpose model, TabPFN, could effectively predict algorithm runtime distributions (RTD), a specialized prediction problem. The goal was to evaluate how well TabPFN v2 can model the uncertainty and variability of algorithm runtimes compared to a specialized deep learning model, DistNet.
-                <br><br>
-                <strong>Key findings:</strong>
-                <ul class="list-disc list-inside mt-2 text-gray-300">
-                    <li>TabPFN's architecture has a GPU memory limitation, restricting the training context size. A bagging pipeline was designed to work around this.</li>
-                    <li>Despite memory constraints, the general-purpose TabPFN showed competitive and often superior performance against the specialized DistNet.</li>
-                </ul>
             </p>
         </div>
     </div>
@@ -466,7 +467,27 @@
             <span class="close-button">&times;</span>
             <h2 class="text-2xl font-bold text-white mb-4">Automation Process Tool</h2>
             <p class="text-gray-300 leading-relaxed">
-                Created a tool that automates any project by integrating Apache Airflow for workflow management, MinIO for object storage, and Flask for webhook notifications. This tool streamlines the process of uploading images to MinIO, triggering analysis pipelines, and retrieving results automatically, significantly improving efficiency and reducing manual intervention.
+                Developed as an internal R&D tool at Samsung to streamline the testing and validation pipeline. It automated the process of uploading device test images to a central storage (MinIO), which then triggered analysis workflows via Airflow, significantly reducing manual overhead for the QA teams.
+            </p>
+        </div>
+    </div>
+
+    <div id="modal7" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 class="text-2xl font-bold text-white mb-4">Chatbot for Research Assistance</h2>
+            <p class="text-gray-300 leading-relaxed">
+                Created as a key internal project at Samsung to help engineers meet their KPI for filing patents. The chatbot used NLP to allow researchers to quickly search through vast databases of academic papers and technical documents, finding relevant prior art and innovative ideas on specific topics, thereby accelerating the patent research process.
+            </p>
+        </div>
+    </div>
+
+    <div id="modal8" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 class="text-2xl font-bold text-white mb-4">Automated Data Processing Tool</h2>
+            <p class="text-gray-300 leading-relaxed">
+                Built to handle the massive influx of data from device performance tests at Samsung. The tool automated critical data processing tasks, including cleansing corrupted log files and transforming raw sensor data into a structured format for analysis, saving hundreds of hours for the data engineering team.
             </p>
         </div>
     </div>
