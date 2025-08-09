@@ -139,7 +139,7 @@
     <!-- Header & Navbar -->
     <header id="navbar" class="navbar fixed w-full top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#home" class="text-2xl font-bold text-white">Gurmeher Singh Puri</a>
+            <a href="#home" class="text-xl sm:text-2xl font-bold text-white whitespace-nowrap">Gurmeher Singh Puri</a>
             <div class="flex items-center">
                 <nav class="hidden md:flex space-x-8">
                     <a href="#about" data-key="nav_about" class="hover:text-indigo-400 transition">About</a>
@@ -179,12 +179,12 @@
 
     <main>
         <!-- Hero Section -->
-        <section id="home" class="min-h-screen flex items-center bg-gray-900">
+        <section id="home" class="min-h-screen flex items-center bg-gray-900 pt-20">
             <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
                 <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
                     <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-4" data-key="hero_title">I'm Gurmeher Singh Puri</h1>
-                    <p class="text-xl md:text-2xl text-indigo-400 mb-6"><span data-key="hero_i_am">A</span> <span id="typed-text"></span></p>
-                    <p class="text-lg text-gray-300 mb-8 max-w-lg mx-auto md:mx-0" data-key="hero_subtitle">4th-semester master's student in Computer Science with a focus on Artificial Intelligence, based in Freiburg, Germany.</p>
+                    <p class="text-xl md:text-2xl text-indigo-400 mb-6"><span id="typed-text-prefix"></span><span id="typed-text"></span></p>
+                    <p class="text-lg text-gray-300 mb-8 max-w-lg mx-auto md:mx-0" data-key="hero_subtitle">A master's student in Computer Science with a focus on Artificial Intelligence, based in Freiburg, Germany.</p>
                     <div class="flex justify-center md:justify-start items-center space-x-6">
                         <a href="mailto:gurmeher23@gmail.com" class="text-gray-300 hover:text-indigo-400 transition" title="Email"><i class="fas fa-envelope text-2xl"></i></a>
                         <a href="https://www.linkedin.com/in/gurmeher-singh-puri-674949146/" target="_blank" class="text-gray-300 hover:text-indigo-400 transition" title="LinkedIn"><i class="fab fa-linkedin text-2xl"></i></a>
@@ -194,7 +194,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="md:w-1/3">
+                <div class="md:w-1/3 mt-8 md:mt-0">
                     <img src="assets/profile-hero.png" alt="Gurmeher Singh Puri" class="rounded-full shadow-2xl mx-auto" style="border: 5px solid #4f46e5;">
                 </div>
             </div>
@@ -210,7 +210,7 @@
                     </div>
                     <div class="md:w-2/3">
                         <p class="text-lg text-gray-300 leading-relaxed" data-key="about_text">
-                            I am a 4th-semester master's student in Computer Science with a focus on Artificial Intelligence at the University of Freiburg. Currently working as a Work Student at Fraunhofer ISE, Freiburg, with a background as a Software Engineer at Samsung R&D Institute. Expertise in software development, automation testing, and various programming languages. Seeking opportunities to enhance skills and knowledge, preferably in a tech lead role.
+                            I am a master's student in Computer Science with a focus on Artificial Intelligence at the University of Freiburg. Currently working as a Work Student at Fraunhofer ISE, Freiburg, with a background as a Software Engineer at Samsung R&D Institute. Expertise in software development, automation testing, and various programming languages. Seeking opportunities to enhance skills and knowledge, preferably in a tech lead role.
                         </p>
                     </div>
                 </div>
@@ -238,7 +238,7 @@
                         <h3 class="text-xl font-semibold text-white" data-key="exp2_title">AI Work Student</h3>
                         <p class="text-indigo-400 font-medium">
                             <a href="https://www.inatech.uni-freiburg.de/" target="_blank" class="hover:underline">INATECH</a> & 
-                            <a href="https://ml.informatik.uni-freiburg.de" target="_blank" class="hover:underline">Machine Learning Lab, University of Freiburg</a>
+                            <a href="https://ml.cs.uni-freiburg.de/" target="_blank" class="hover:underline">Machine Learning Lab, University of Freiburg</a>
                         </p>
                         <p class="text-gray-400 mb-2" data-key="exp2_date">December 2024 – July 2025</p>
                         <ul class="list-disc list-inside text-gray-300 space-y-1">
@@ -363,7 +363,7 @@
                                 <li data-key="edu1_course5">Information Retrieval</li>
                                 <li data-key="edu1_course6">Soft Robotics</li>
                                 <li data-key="edu1_course7">Deep Learning Lab</li>
-                                <li data-key="edu1_course8">AutoML</li>
+                                <li data-key="edu1_course8">AutoML Lab</li>
                             </ul>
                         </div>
                     </div>
@@ -456,8 +456,8 @@
         <div class="modal-content">
             <span class="close-button">&times;</span>
             <h2 class="text-2xl font-bold text-white mb-4" data-key="p1_title_modal">Electricity Carbon Intensity Prediction</h2>
-            <p class="text-gray-300 leading-relaxed" data-key="p1_desc_modal">
-                This master's project involved developing a machine learning system to predict electricity grid carbon emission intensities across Germany. The system addresses the critical challenge of forecasting carbon footprint variations in Germany's energy landscape, where renewable sources create significant daily and seasonal fluctuations.
+            <p class="text-gray-300 leading-relaxed">
+                <span data-key="p1_desc_modal">This master's project involved developing a machine learning system to predict electricity grid carbon emission intensities across Germany. The system addresses the critical challenge of forecasting carbon footprint variations in Germany's energy landscape, where renewable sources create significant daily and seasonal fluctuations.</span>
                 <br><br>
                 <strong data-key="p_modal_key_achievements">Key achievements:</strong>
                 <ul class="list-disc list-inside mt-2 text-gray-300">
@@ -560,17 +560,17 @@
                 nav_contact_mobile: "Contact",
                 hero_title: "I'm Gurmeher Singh Puri",
                 hero_i_am: "A",
-                hero_subtitle: "4th-semester master's student in Computer Science with a focus on Artificial Intelligence, based in Freiburg, Germany.",
+                hero_subtitle: "A master's student in Computer Science with a focus on Artificial Intelligence, based in Freiburg, Germany.",
                 hero_cv_button: "Download CV",
                 about_title: "About Me",
-                about_text: "I am a 4th-semester master's student in Computer Science with a focus on Artificial Intelligence at the University of Freiburg. Currently working as a Work Student at Fraunhofer ISE, Freiburg, with a background as a Software Engineer at Samsung R&D Institute. Expertise in software development, automation testing, and various programming languages. Seeking opportunities to enhance skills and knowledge, preferably in a tech lead role.",
+                about_text: "I am a master's student in Computer Science with a focus on Artificial Intelligence at the University of Freiburg. Currently working as a Work Student at Fraunhofer ISE, Freiburg, with a background as a Software Engineer at Samsung R&D Institute. Expertise in software development, automation testing, and various programming languages. Seeking opportunities to enhance skills and knowledge, preferably in a tech lead role.",
                 experience_title: "Work Experience",
                 exp1_title: "Working Student",
                 exp1_date: "March 2024 – Present",
                 exp1_desc1: "Developed the Spotlob project, an image processing library for automated detection tasks.",
                 exp1_desc2: "Applied machine learning models for defect detection in solar cells, improving analysis accuracy.",
                 exp1_desc3: "Automated workflows using Apache Airflow, MinIO, and Flask.",
-                exp2_title: "Master Project Student",
+                exp2_title: "AI Work Student",
                 exp2_date: "December 2024 – July 2025",
                 exp2_desc1: "Developed a machine learning system for predicting electricity grid carbon emission intensities across Germany using AutoML.",
                 exp2_desc2: "Integrated data from ENTSO-E and CO2map.de, covering generation forecasts, cross-border trading, and carbon intensity measurements.",
@@ -679,17 +679,17 @@
                 nav_contact_mobile: "Kontakt",
                 hero_title: "Ich bin Gurmeher Singh Puri",
                 hero_i_am: "Ein",
-                hero_subtitle: "Masterstudent im 4. Semester in Informatik mit Schwerpunkt auf Künstlicher Intelligenz, ansässig in Freiburg.",
+                hero_subtitle: "Masterstudent der Informatik mit Schwerpunkt Künstliche Intelligenz, ansässig in Freiburg.",
                 hero_cv_button: "Lebenslauf herunterladen",
                 about_title: "Über mich",
-                about_text: "Ich bin Masterstudent im 4. Semester in Informatik mit Schwerpunkt Künstliche Intelligenz an der Universität Freiburg. Derzeit arbeite ich als Werkstudent am Fraunhofer ISE in Freiburg und habe einen Hintergrund als Softwareentwickler am Samsung R&D Institute. Meine Expertise liegt in der Softwareentwicklung, im automatisierten Testen und in verschiedenen Programmiersprachen. Ich suche nach Möglichkeiten, meine Fähigkeiten und Kenntnisse zu erweitern, vorzugsweise in einer technischen Führungsrolle.",
+                about_text: "Ich bin Masterstudent der Informatik mit Schwerpunkt Künstliche Intelligenz an der Universität Freiburg. Derzeit arbeite ich als Werkstudent am Fraunhofer ISE in Freiburg und habe einen Hintergrund als Softwareentwickler am Samsung R&D Institute. Meine Expertise liegt in der Softwareentwicklung, im automatisierten Testen und in verschiedenen Programmiersprachen. Ich suche nach Möglichkeiten, meine Fähigkeiten und Kenntnisse zu erweitern, vorzugsweise in einer technischen Führungsrolle.",
                 experience_title: "Berufserfahrung",
                 exp1_title: "Werkstudent",
                 exp1_date: "März 2024 – Heute",
                 exp1_desc1: "Entwicklung des Spotlob-Projekts, einer Bildverarbeitungsbibliothek zur Automatisierung von Erkennungsaufgaben.",
                 exp1_desc2: "Anwendung von Machine-Learning-Modellen zur Fehlererkennung in Solarzellen, was die Analysegenauigkeit verbessert.",
                 exp1_desc3: "Automatisierung von Arbeitsabläufen mit Apache Airflow, MinIO und Flask.",
-                exp2_title: "Master-Projektstudent",
+                exp2_title: "KI-Werkstudent",
                 exp2_date: "Dezember 2024 – Juli 2025",
                 exp2_desc1: "Entwicklung eines maschinellen Lernsystems zur Vorhersage der Kohlenstoffemissionsintensität des Stromnetzes in Deutschland mittels AutoML.",
                 exp2_desc2: "Integration von Daten von ENTSO-E und CO2map.de, die Erzeugungsprognosen, grenzüberschreitenden Handel und Kohlenstoffintensitätsmessungen umfassen.",
@@ -784,18 +784,26 @@
         };
 
         const typedWords = {
-            en: ["a Research & Development Enthusiast.", "a Software Engineer.", "an AI Practitioner."],
-            de: ["ein Forschungs- & Entwicklungs-Enthusiast.", "ein Softwareentwickler.", "ein KI-Praktiker."]
+            en: ["Research & Development Enthusiast.", "Software Engineer.", "AI Practitioner."],
+            de: ["Forschungs- & Entwicklungs-Enthusiast.", "Softwareentwickler.", "KI-Praktiker."]
         };
 
         let currentLang = 'en';
         let words = typedWords.en;
         let i = 0, j = 0, currentWord = "", isDeleting = false;
         const typedTextSpan = document.getElementById("typed-text");
+        const typedTextPrefixSpan = document.getElementById("typed-text-prefix");
 
         // Typed.js functionality
         function type() {
             currentWord = words[i];
+            typedTextPrefixSpan.textContent = currentLang === 'en' ? 'A ' : 'Ein ';
+
+            // This logic ensures "an" is used for "AI Practitioner" in English
+            if (currentLang === 'en' && i === 2) {
+                 typedTextPrefixSpan.textContent = 'An ';
+            }
+
             if (isDeleting) {
                 typedTextSpan.textContent = currentWord.substring(0, j - 1);
                 j--;
@@ -821,7 +829,7 @@
             currentLang = lang;
             document.querySelectorAll('[data-key]').forEach(elem => {
                 const key = elem.getAttribute('data-key');
-                if (translations[lang][key]) {
+                if (key !== 'hero_i_am' && translations[lang][key]) {
                     elem.innerHTML = translations[lang][key];
                 }
             });
@@ -845,6 +853,7 @@
             words = typedWords[lang];
             i = 0; j = 0; isDeleting = false;
             typedTextSpan.textContent = "";
+            type(); // Start typing immediately
         }
 
         document.addEventListener("DOMContentLoaded", function() { 
