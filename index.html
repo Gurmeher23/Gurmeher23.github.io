@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gurmeher Singh Puri | Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        .section-title {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+        }
+
+        .navbar {
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar-scrolled {
+            background-color: rgba(29, 39, 53, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Typing animation */
+        .typed-cursor {
+            opacity: 1;
+            animation: blink 0.7s infinite;
+        }
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Scroll-triggered animations */
+        .reveal {
+            position: relative;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Timeline for Experience */
+        .timeline-item {
+            position: relative;
+            padding-left: 2.5rem;
+            padding-bottom: 2rem;
+            border-left: 2px solid #374151;
+        }
+        .timeline-item:last-child {
+            border-left: 2px solid transparent;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -0.5rem;
+            top: 0;
+            height: 1rem;
+            width: 1rem;
+            background-color: #4f46e5;
+            border-radius: 50%;
+            border: 2px solid #1f2937;
+        }
+        
+        /* Project Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+            animation: fadeIn 0.3s;
+        }
+        .modal-content {
+            background-color: #1f2937;
+            margin: 10% auto;
+            padding: 2rem;
+            border: 1px solid #4f46e5;
+            width: 80%;
+            max-width: 800px;
+            border-radius: 10px;
+            position: relative;
+            animation: slideIn 0.3s;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        @keyframes slideIn {
+            from {transform: translateY(-50px);}
+            to {transform: translateY(0);}
+        }
+        .close-button {
+            color: #aaa;
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close-button:hover,
+        .close-button:focus {
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <!-- Header & Navbar -->
+    <header id="navbar" class="navbar fixed w-full top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold text-white">Gurmeher Singh Puri</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="hover:text-indigo-400 transition">About</a>
+                <a href="#experience" class="hover:text-indigo-400 transition">Experience</a>
+                <a href="#projects" class="hover:text-indigo-400 transition">Projects</a>
+                <a href="#skills" class="hover:text-indigo-400 transition">Skills</a>
+                <a href="#education" class="hover:text-indigo-400 transition">Education</a>
+                <a href="#contact" class="hover:text-indigo-400 transition">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
+            <a href="#about" class="block px-6 py-3 hover:bg-gray-700">About</a>
+            <a href="#experience" class="block px-6 py-3 hover:bg-gray-700">Experience</a>
+            <a href="#projects" class="block px-6 py-3 hover:bg-gray-700">Projects</a>
+            <a href="#skills" class="block px-6 py-3 hover:bg-gray-700">Skills</a>
+            <a href="#education" class="block px-6 py-3 hover:bg-gray-700">Education</a>
+            <a href="#contact" class="block px-6 py-3 hover:bg-gray-700">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex items-center bg-gray-900">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-4">I'm Gurmeher Singh Puri</h1>
+                    <p class="text-xl md:text-2xl text-indigo-400 mb-6">A <span id="typed-text"></span></p>
+                    <p class="text-lg text-gray-300 mb-8 max-w-lg mx-auto md:mx-0">4th-semester master's student in Computer Science with a focus on Artificial Intelligence, based in Freiburg, Germany.</p>
+                    <div class="flex justify-center md:justify-start items-center space-x-6">
+                        <a href="mailto:gurmeher23@gmail.com" class="text-gray-300 hover:text-indigo-400 transition" title="Email"><i class="fas fa-envelope text-2xl"></i></a>
+                        <a href="https://www.linkedin.com/in/gurmeher-singh-puri-674949146/" target="_blank" class="text-gray-300 hover:text-indigo-400 transition" title="LinkedIn"><i class="fab fa-linkedin text-2xl"></i></a>
+                        <a href="https://github.com/Gurmeher23" target="_blank" class="text-gray-300 hover:text-indigo-400 transition" title="GitHub"><i class="fab fa-github text-2xl"></i></a>
+                        <a href="Gurmeher_Resume.pdf" download="Gurmeher_Puri_Resume.pdf" class="bg-indigo-600 text-white font-bold py-2 px-6 rounded-full hover:bg-indigo-700 transition-colors duration-300">
+                            Download CV
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/3">
+                    <img src="assets/profile-hero.png" alt="Gurmeher Singh Puri" class="rounded-full shadow-2xl mx-auto" style="border: 5px solid #4f46e5;">
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-gray-800">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-3xl text-center mb-12 reveal">About Me</h2>
+                <div class="flex flex-col md:flex-row items-center gap-12 reveal">
+                    <div class="md:w-1/3">
+                        <img src="assets/profile-about.png" alt="Gurmeher Singh Puri" class="rounded-lg shadow-xl w-full">
+                    </div>
+                    <div class="md:w-2/3">
+                        <p class="text-lg text-gray-300 leading-relaxed">
+                            I am a 4th-semester master's student in Computer Science with a focus on Artificial Intelligence at the University of Freiburg. Currently working as a Work Student at Fraunhofer ISE, Freiburg, with a background as a Software Engineer at Samsung R&D Institute. Expertise in software development, automation testing, and various programming languages. Seeking opportunities to enhance skills and knowledge, preferably in a tech lead role.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-20 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-3xl text-center mb-12 reveal">Work Experience</h2>
+                <div class="max-w-3xl mx-auto">
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <h3 class="text-xl font-semibold text-white">Master Project Student</h3>
+                        <p class="text-indigo-400 font-medium">INATECH & Machine Learning Lab, University of Freiburg</p>
+                        <p class="text-gray-400 mb-2">December 2024 – July 2025</p>
+                        <ul class="list-disc list-inside text-gray-300 space-y-1">
+                            <li>Developed a machine learning system for predicting electricity grid carbon emission intensities across Germany using AutoML.</li>
+                            <li>Integrated data from ENTSO-E and CO2map.de, covering generation forecasts, cross-border trading, and carbon intensity measurements.</li>
+                            <li>Employed AutoGluon with LightGBM, CatBoost, and XGBoost to create optimized and accurate prediction models.</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <h3 class="text-xl font-semibold text-white">Working Student</h3>
+                        <p class="text-indigo-400 font-medium">Fraunhofer ISE, Freiburg, Germany</p>
+                        <p class="text-gray-400 mb-2">March 2024 – Present</p>
+                        <ul class="list-disc list-inside text-gray-300 space-y-1">
+                            <li>Developed the Spotlob project, an image processing library for automated detection tasks.</li>
+                            <li>Applied machine learning models for defect detection in solar cells, improving analysis accuracy.</li>
+                            <li>Created analysis pipelines and implemented Python libraries like Poetry and Docker.</li>
+                            <li>Automated workflows using Apache Airflow, MinIO, and Flask.</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <h3 class="text-xl font-semibold text-white">Software Engineer</h3>
+                        <p class="text-indigo-400 font-medium">Samsung Research and Development, Noida</p>
+                        <p class="text-gray-400 mb-2">August 2021 – September 2023</p>
+                        <ul class="list-disc list-inside text-gray-300 space-y-1">
+                            <li>Developed 12 tools and websites using JavaScript, Python, and RPA.</li>
+                            <li>Expertise in Android Studio and JUnit for Samsung Knox security platform.</li>
+                            <li>Managed smoke executions on 1000+ devices using CI/CD tools.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 bg-gray-800">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-3xl text-center mb-12 reveal">Projects</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <div class="bg-gray-900 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 reveal cursor-pointer project-card flex flex-col" data-modal="modal1">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-white mb-2">Electricity Carbon Intensity Prediction</h3>
+                            <p class="text-indigo-400 text-sm mb-2">(AutoML, Python, Pandas)</p>
+                            <p class="text-gray-300 flex-grow">Developed a system to forecast electricity carbon intensity in Germany using AutoGluon.</p>
+                        </div>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="bg-gray-900 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 reveal cursor-pointer project-card flex flex-col" data-modal="modal2">
+                         <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-white mb-2">Predicting Algorithm Runtime with TabPFN</h3>
+                            <p class="text-indigo-400 text-sm mb-2">(Python, Deep Learning, TabPFN)</p>
+                            <p class="text-gray-300 flex-grow">Investigated the use of TabPFN to predict algorithm runtime distributions against specialized models.</p>
+                        </div>
+                    </div>
+                    <!-- Project 3 -->
+                    <div class="bg-gray-900 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 reveal cursor-pointer project-card flex flex-col" data-modal="modal3">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-white mb-2">Automation Process Tool</h3>
+                            <p class="text-indigo-400 text-sm mb-2">(Python, MinIo, Airflow, Docker)</p>
+                            <p class="text-gray-300 flex-grow">Automates project workflows by integrating Airflow, MinIO, and Flask for streamlined processes.</p>
+                        </div>
+                    </div>
+                    <!-- Project 4 -->
+                    <div class="bg-gray-900 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 reveal cursor-pointer project-card flex flex-col" data-modal="modal4">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-white mb-2">RPA SWEET Tool</h3>
+                            <p class="text-indigo-400 text-sm mb-2">(Python, RPA)</p>
+                            <p class="text-gray-300 flex-grow">Automated manual testing work using RPA, achieving significant time savings annually.</p>
+                        </div>
+                    </div>
+                    <!-- Project 5 -->
+                    <div class="bg-gray-900 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 reveal cursor-pointer project-card flex flex-col" data-modal="modal5">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-white mb-2">RPA CR-CT Tool</h3>
+                            <p class="text-indigo-400 text-sm mb-2">(Python, RPA)</p>
+                            <p class="text-gray-300 flex-grow">Developed a tool for automated overnight downloading of software binaries.</p>
+                        </div>
+                    </div>
+                    <!-- Project 6 -->
+                    <div class="bg-gray-900 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 reveal cursor-pointer project-card flex flex-col" data-modal="modal6">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-white mb-2">RPA SWC Analyst</h3>
+                            <p class="text-indigo-400 text-sm mb-2">(RPA)</p>
+                            <p class="text-gray-300 flex-grow">Analyzed scores of Samsung Professional coding tests and provided recommendations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 bg-gray-900">
+             <div class="container mx-auto px-6">
+                <h2 class="section-title text-3xl text-center mb-12 reveal">Skills</h2>
+                <div class="max-w-4xl mx-auto text-center reveal">
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-semibold text-white mb-4">Programming Languages</h3>
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <span class="bg-gray-800 text-gray-200 text-lg px-4 py-2 rounded-full">Python</span>
+                            <span class="bg-gray-800 text-gray-200 text-lg px-4 py-2 rounded-full">Java</span>
+                            <span class="bg-gray-800 text-gray-200 text-lg px-4 py-2 rounded-full">C++</span>
+                            <span class="bg-gray-800 text-gray-200 text-lg px-4 py-2 rounded-full">SQL</span>
+                             <span class="bg-gray-800 text-gray-200 text-lg px-4 py-2 rounded-full">JavaScript</span>
+                             <span class="bg-gray-800 text-gray-200 text-lg px-4 py-2 rounded-full">HTML5/CSS3</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold text-white mb-4">Tools & Technologies</h3>
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <span class="bg-gray-800 text-gray-200 text-lg px-4 py-2 rounded-full">Git & GitLab</span>
+                            <span class="bg-gray-800 text-gray-200 text-lg px-4 py-2 rounded-full">Docker</span>
+                            <span class="bg-gray-800 text-gray-200 text-lg px-4 py-2 rounded-full">CI/CD</span>
+                            <span class="bg-gray-800 text-gray-200 text-lg px-4 py-2 rounded-full">Android Studio</span>
+                            <span class="bg-gray-800 text-gray-200 text-lg px-4 py-2 rounded-full">RPA</span>
+                            <span class="bg-gray-800 text-gray-200 text-lg px-4 py-2 rounded-full">Apache Airflow</span>
+                            <span class="bg-gray-800 text-gray-200 text-lg px-4 py-2 rounded-full">MinIO</span>
+                            <span class="bg-gray-800 text-gray-200 text-lg px-4 py-2 rounded-full">AutoML</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Education Section -->
+        <section id="education" class="py-20 bg-gray-800">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-3xl text-center mb-12 reveal">Education</h2>
+                 <div class="max-w-3xl mx-auto">
+                    <div class="bg-gray-900 p-6 rounded-lg shadow-lg mb-6 reveal">
+                        <h3 class="text-xl font-semibold text-white">Master's in Computer Science</h3>
+                        <p class="text-indigo-400">Albert Ludwigs University of Freiburg</p>
+                        <p class="text-gray-400">October 2023 – Present</p>
+                        <div class="mt-4">
+                            <h4 class="text-lg font-semibold text-white mb-2">Key Courses:</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-1">
+                                <li>Foundations of Artificial Intelligence</li>
+                                <li>Foundations of Deep Learning</li>
+                                <li>Advanced Computer Graphics</li>
+                                <li>High-Performance Computing</li>
+                                <li>Information Retrieval</li>
+                                <li>Soft Robotics</li>
+                                <li>Deep Learning Lab</li>
+                                <li>AutoML Lab</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 p-6 rounded-lg shadow-lg mb-6 reveal">
+                        <h3 class="text-xl font-semibold text-white">Bachelor's in Computer Science and Engineering</h3>
+                        <p class="text-indigo-400">Amity University Uttar Pradesh, India, Noida</p>
+                        <p class="text-gray-400">July 2017 – June 2021</p>
+                    </div>
+                    <div class="bg-gray-900 p-6 rounded-lg shadow-lg reveal">
+                        <h3 class="text-xl font-semibold text-white">High School</h3>
+                        <p class="text-indigo-400">Modern School, Barakhamba Road, New Delhi</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-gray-900">
+            <div class="container mx-auto px-6 text-center reveal">
+                <h2 class="section-title text-3xl mb-4">Get In Touch</h2>
+                <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">I'm currently seeking new opportunities. If you have a project in mind or just want to connect, feel free to reach out. Let's build something amazing together!</p>
+                <a href="mailto:gurmeher23@gmail.com" class="bg-indigo-600 text-white font-bold py-3 px-8 rounded-full hover:bg-indigo-700 transition-colors duration-300 text-lg">
+                    Say Hello
+                </a>
+                 <div class="mt-8 text-gray-400">
+                    <p><i class="fas fa-envelope mr-2"></i> gurmeher23@gmail.com</p>
+                    <p><i class="fas fa-phone mr-2"></i> (+49) 1799032502</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-6">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <p>&copy; 2025 Gurmeher Singh Puri. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Project Modals -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 class="text-2xl font-bold text-white mb-4">Electricity Carbon Intensity Prediction</h2>
+            <p class="text-gray-300 leading-relaxed">
+                This master's project involved developing a machine learning system to predict electricity grid carbon emission intensities across Germany. The system addresses the critical challenge of forecasting carbon footprint variations in Germany's energy landscape, where renewable sources create significant daily and seasonal fluctuations.
+                <br><br>
+                <strong>Key achievements:</strong>
+                <ul class="list-disc list-inside mt-2 text-gray-300">
+                    <li>Integrated data from multiple European energy sources, including the ENTSO-E transparency platform and CO2map.de.</li>
+                    <li>Processed data from over twenty-two cross-border electricity connections to capture complex interactions influencing German electricity carbon intensity.</li>
+                    <li>Employed AutoGluon's automated ensemble framework with LightGBM, CatBoost, and XGBoost to balance prediction accuracy with deployment requirements.</li>
+                    <li>Achieved significant model size reductions (from GBs to ~100-130 MB per model) while maintaining strong predictive performance.</li>
+                </ul>
+            </p>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 class="text-2xl font-bold text-white mb-4">Predicting Algorithm Runtime with TabPFN</h2>
+            <p class="text-gray-300 leading-relaxed">
+                This research project investigated whether a general-purpose model, TabPFN, could effectively predict algorithm runtime distributions (RTD), a specialized prediction problem. The goal was to evaluate how well TabPFN v2 can model the uncertainty and variability of algorithm runtimes compared to a specialized deep learning model, DistNet.
+                <br><br>
+                <strong>Key findings:</strong>
+                <ul class="list-disc list-inside mt-2 text-gray-300">
+                    <li>TabPFN's architecture has a GPU memory limitation, restricting the training context size. A bagging pipeline was designed to work around this.</li>
+                    <li>Despite memory constraints, the general-purpose TabPFN showed competitive and often superior performance against the specialized DistNet.</li>
+                    <li>The results highlight the potential of using powerful, pre-trained tabular data models for specialized scientific prediction tasks.</li>
+                </ul>
+            </p>
+        </div>
+    </div>
+    
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 class="text-2xl font-bold text-white mb-4">Automation Process Tool</h2>
+            <p class="text-gray-300 leading-relaxed">
+                Created a tool that automates any project by integrating Apache Airflow for workflow management, MinIO for object storage, and Flask for webhook notifications. This tool streamlines the process of uploading images to MinIO, triggering analysis pipelines, and retrieving results automatically, significantly improving efficiency and reducing manual intervention.
+            </p>
+        </div>
+    </div>
+
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 class="text-2xl font-bold text-white mb-4">RPA SWEET Tool</h2>
+            <p class="text-gray-300 leading-relaxed">
+                Automated testing manual work using Robotic Process Automation (RPA), saving over 120,000 hours for the company on a yearly basis. This project involved analyzing existing manual workflows and developing robust automation scripts to handle repetitive testing tasks, leading to a massive increase in efficiency and allowing human testers to focus on more complex quality assurance challenges.
+            </p>
+        </div>
+    </div>
+
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 class="text-2xl font-bold text-white mb-4">RPA CR-CT Tool</h2>
+            <p class="text-gray-300 leading-relaxed">
+                Developed a tool for downloading software binaries overnight using RPA. This automation saved 9,200 hours yearly by eliminating the need for engineers to manually download and manage large software files, ensuring that the latest versions were always ready for testing and development each morning.
+            </p>
+        </div>
+    </div>
+
+    <div id="modal6" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 class="text-2xl font-bold text-white mb-4">RPA SWC Analyst</h2>
+            <p class="text-gray-300 leading-relaxed">
+                Created an RPA-based system to analyze the scores of Samsung Professional coding tests. The tool automatically processed test results, generated performance reports, and provided data-driven recommendations, saving 20,000 hours of manual analysis work yearly and helping to standardize the evaluation process.
+            </p>
+        </div>
+    </div>
+
+
+    <!-- JavaScript for Animations and Interactions -->
+    <script>
+        // Typed.js functionality for the hero section
+        const words = ["Research & Development Enthusiast.", "Software Engineer.", "AI Practitioner."];
+        let i = 0;
+        let j = 0;
+        let currentWord = "";
+        let isDeleting = false;
+        const typedTextSpan = document.getElementById("typed-text");
+        const cursorSpan = document.createElement('span');
+        cursorSpan.classList.add('typed-cursor');
+        cursorSpan.textContent = '|';
+        typedTextSpan.parentNode.insertBefore(cursorSpan, typedTextSpan.nextSibling);
+
+        function type() {
+            currentWord = words[i];
+            if (isDeleting) {
+                typedTextSpan.textContent = currentWord.substring(0, j - 1);
+                j--;
+                if (j === 0) {
+                    isDeleting = false;
+                    i++;
+                    if (i === words.length) {
+                        i = 0;
+                    }
+                }
+            } else {
+                typedTextSpan.textContent = currentWord.substring(0, j + 1);
+                j++;
+                if (j === currentWord.length) {
+                    isDeleting = true;
+                    setTimeout(type, 2000); // Pause at end of word
+                    return;
+                }
+            }
+            setTimeout(type, isDeleting ? 50 : 150);
+        }
+        
+        document.addEventListener("DOMContentLoaded", function() { 
+            setTimeout(type, 1000);
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.onscroll = () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        };
+
+        // Scroll-triggered reveal animations
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                } else {
+                    reveals[i].classList.remove("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal(); // Initial check
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Modal functionality
+        const projectCards = document.querySelectorAll('.project-card');
+        projectCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const modalId = card.getAttribute('data-modal');
+                document.getElementById(modalId).style.display = 'block';
+            });
+        });
+
+        const closeButtons = document.querySelectorAll('.close-button');
+        closeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                button.closest('.modal').style.display = 'none';
+            });
+        });
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = "none";
+            }
+        }
+
+    </script>
+</body>
+</html>
