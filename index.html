@@ -140,8 +140,9 @@
                 <a href="#about" class="hover:text-indigo-400 transition">About</a>
                 <a href="#experience" class="hover:text-indigo-400 transition">Experience</a>
                 <a href="#projects" class="hover:text-indigo-400 transition">Projects</a>
-                <a href="#skills" class="hover:text-indigo-400 transition">Skills</a>
                 <a href="#education" class="hover:text-indigo-400 transition">Education</a>
+                <a href="#achievements" class="hover:text-indigo-400 transition">Achievements</a>
+                <a href="#publications" class="hover:text-indigo-400 transition">Publications</a>
                 <a href="#contact" class="hover:text-indigo-400 transition">Contact</a>
             </nav>
             <button id="mobile-menu-button" class="md:hidden text-white">
@@ -153,8 +154,9 @@
             <a href="#about" class="block px-6 py-3 hover:bg-gray-700">About</a>
             <a href="#experience" class="block px-6 py-3 hover:bg-gray-700">Experience</a>
             <a href="#projects" class="block px-6 py-3 hover:bg-gray-700">Projects</a>
-            <a href="#skills" class="block px-6 py-3 hover:bg-gray-700">Skills</a>
             <a href="#education" class="block px-6 py-3 hover:bg-gray-700">Education</a>
+            <a href="#achievements" class="block px-6 py-3 hover:bg-gray-700">Achievements</a>
+            <a href="#publications" class="block px-6 py-3 hover:bg-gray-700">Publications</a>
             <a href="#contact" class="block px-6 py-3 hover:bg-gray-700">Contact</a>
         </div>
     </header>
@@ -207,35 +209,54 @@
                     <div class="timeline-item reveal">
                         <div class="timeline-dot"></div>
                         <h3 class="text-xl font-semibold text-white">Master Project Student</h3>
-                        <p class="text-indigo-400 font-medium">INATECH & Machine Learning Lab, University of Freiburg</p>
+                        <p class="text-indigo-400 font-medium">
+                            <a href="https://www.inatech.uni-freiburg.de/" target="_blank" class="hover:underline">INATECH</a> & 
+                            <a href="https://ml.cs.uni-freiburg.de/" target="_blank" class="hover:underline">Machine Learning Lab, University of Freiburg</a>
+                        </p>
                         <p class="text-gray-400 mb-2">December 2024 – July 2025</p>
                         <ul class="list-disc list-inside text-gray-300 space-y-1">
                             <li>Developed a machine learning system for predicting electricity grid carbon emission intensities across Germany using AutoML.</li>
                             <li>Integrated data from ENTSO-E and CO2map.de, covering generation forecasts, cross-border trading, and carbon intensity measurements.</li>
-                            <li>Employed AutoGluon with LightGBM, CatBoost, and XGBoost to create optimized and accurate prediction models.</li>
                         </ul>
                     </div>
                     <div class="timeline-item reveal">
                         <div class="timeline-dot"></div>
                         <h3 class="text-xl font-semibold text-white">Working Student</h3>
-                        <p class="text-indigo-400 font-medium">Fraunhofer ISE, Freiburg, Germany</p>
+                        <p class="text-indigo-400 font-medium"><a href="https://www.ise.fraunhofer.de/" target="_blank" class="hover:underline">Fraunhofer ISE, Freiburg, Germany</a></p>
                         <p class="text-gray-400 mb-2">March 2024 – Present</p>
                         <ul class="list-disc list-inside text-gray-300 space-y-1">
                             <li>Developed the Spotlob project, an image processing library for automated detection tasks.</li>
                             <li>Applied machine learning models for defect detection in solar cells, improving analysis accuracy.</li>
-                            <li>Created analysis pipelines and implemented Python libraries like Poetry and Docker.</li>
                             <li>Automated workflows using Apache Airflow, MinIO, and Flask.</li>
                         </ul>
                     </div>
                     <div class="timeline-item reveal">
                         <div class="timeline-dot"></div>
                         <h3 class="text-xl font-semibold text-white">Software Engineer</h3>
-                        <p class="text-indigo-400 font-medium">Samsung Research and Development, Noida</p>
+                        <p class="text-indigo-400 font-medium"><a href="https://research.samsung.com/sri-n" target="_blank" class="hover:underline">Samsung Research and Development, Noida</a></p>
                         <p class="text-gray-400 mb-2">August 2021 – September 2023</p>
                         <ul class="list-disc list-inside text-gray-300 space-y-1">
                             <li>Developed 12 tools and websites using JavaScript, Python, and RPA.</li>
-                            <li>Expertise in Android Studio and JUnit for Samsung Knox security platform.</li>
                             <li>Managed smoke executions on 1000+ devices using CI/CD tools.</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <h3 class="text-xl font-semibold text-white">Software Engineer Intern</h3>
+                        <p class="text-indigo-400 font-medium"><a href="https://research.samsung.com/sri-n" target="_blank" class="hover:underline">Samsung Research and Development, Noida</a></p>
+                        <p class="text-gray-400 mb-2">January 2021 – July 2021</p>
+                        <ul class="list-disc list-inside text-gray-300 space-y-1">
+                            <li>Developed 2 websites using JavaScript, Python, and CSS.</li>
+                            <li>Participated in Samsung Knox automation test case development.</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <h3 class="text-xl font-semibold text-white">Web Developer Intern</h3>
+                        <p class="text-indigo-400 font-medium"><a href="https://www.bhel.com/" target="_blank" class="hover:underline">Bharat Heavy Electrical Limited (BHEL)</a></p>
+                        <p class="text-gray-400 mb-2">May 2019 – July 2019</p>
+                        <ul class="list-disc list-inside text-gray-300 space-y-1">
+                            <li>Developed a basic website called "Student Tracker" using Eclipse and Tomcat Server 9.0.</li>
                         </ul>
                     </div>
                 </div>
@@ -299,39 +320,6 @@
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="py-20 bg-gray-900">
-             <div class="container mx-auto px-6">
-                <h2 class="section-title text-3xl text-center mb-12 reveal">Skills</h2>
-                <div class="max-w-4xl mx-auto text-center reveal">
-                    <div class="mb-8">
-                        <h3 class="text-2xl font-semibold text-white mb-4">Programming Languages</h3>
-                        <div class="flex flex-wrap justify-center gap-4">
-                            <span class="bg-gray-800 text-gray-200 text-lg px-4 py-2 rounded-full">Python</span>
-                            <span class="bg-gray-800 text-gray-200 text-lg px-4 py-2 rounded-full">Java</span>
-                            <span class="bg-gray-800 text-gray-200 text-lg px-4 py-2 rounded-full">C++</span>
-                            <span class="bg-gray-800 text-gray-200 text-lg px-4 py-2 rounded-full">SQL</span>
-                             <span class="bg-gray-800 text-gray-200 text-lg px-4 py-2 rounded-full">JavaScript</span>
-                             <span class="bg-gray-800 text-gray-200 text-lg px-4 py-2 rounded-full">HTML5/CSS3</span>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-semibold text-white mb-4">Tools & Technologies</h3>
-                        <div class="flex flex-wrap justify-center gap-4">
-                            <span class="bg-gray-800 text-gray-200 text-lg px-4 py-2 rounded-full">Git & GitLab</span>
-                            <span class="bg-gray-800 text-gray-200 text-lg px-4 py-2 rounded-full">Docker</span>
-                            <span class="bg-gray-800 text-gray-200 text-lg px-4 py-2 rounded-full">CI/CD</span>
-                            <span class="bg-gray-800 text-gray-200 text-lg px-4 py-2 rounded-full">Android Studio</span>
-                            <span class="bg-gray-800 text-gray-200 text-lg px-4 py-2 rounded-full">RPA</span>
-                            <span class="bg-gray-800 text-gray-200 text-lg px-4 py-2 rounded-full">Apache Airflow</span>
-                            <span class="bg-gray-800 text-gray-200 text-lg px-4 py-2 rounded-full">MinIO</span>
-                            <span class="bg-gray-800 text-gray-200 text-lg px-4 py-2 rounded-full">AutoML</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
         <!-- Education Section -->
         <section id="education" class="py-20 bg-gray-800">
             <div class="container mx-auto px-6">
@@ -363,6 +351,54 @@
                     <div class="bg-gray-900 p-6 rounded-lg shadow-lg reveal">
                         <h3 class="text-xl font-semibold text-white">High School</h3>
                         <p class="text-indigo-400">Modern School, Barakhamba Road, New Delhi</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="py-20 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-3xl text-center mb-12 reveal">Awards & Achievements</h2>
+                <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 text-lg">
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-lg reveal">
+                        <h3 class="text-xl font-semibold text-white mb-3">Professional Awards</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-300">
+                            <li>Samsung Best Project Award for RPA SWEET Tool</li>
+                            <li>Samsung Employee of the Quarter (Q1 & Q3 2022)</li>
+                            <li>Samsung RPA Best Team Award</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-lg reveal">
+                        <h3 class="text-xl font-semibold text-white mb-3">Certifications & Courses</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-300">
+                            <li>UiPath Certified Professional Automation Developer</li>
+                            <li>Microsoft: Programming in HTML5 with JavaScript & CSS3</li>
+                            <li>Google: Digital Unlocked (Digital Marketing Expert)</li>
+                            <li>Stanford University Online: Algorithm Design and Analysis</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications" class="py-20 bg-gray-800">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-3xl text-center mb-12 reveal">Publications</h2>
+                <div class="max-w-3xl mx-auto space-y-6">
+                    <div class="bg-gray-900 p-6 rounded-lg shadow-lg reveal">
+                        <h3 class="text-xl font-semibold text-white">A Review on Cloud Computing</h3>
+                        <p class="text-gray-400 mb-2">January 2019 - May 2019</p>
+                        <a href="https://ieeexplore.ieee.org/document/8776907" target="_blank" class="text-indigo-400 hover:underline">View on IEEE Xplore &rarr;</a>
+                    </div>
+                    <div class="bg-gray-900 p-6 rounded-lg shadow-lg reveal">
+                        <h3 class="text-xl font-semibold text-white">Cryptographic Technique for Communication System through Diffie Hellman Key Algorithm</h3>
+                        <p class="text-gray-400">December 2020 - June 2021</p>
+                    </div>
+                    <div class="bg-gray-900 p-6 rounded-lg shadow-lg reveal">
+                        <h3 class="text-xl font-semibold text-white">High Performance Computers and Computational Science</h3>
+                        <p class="text-gray-400">December 2019 - April 2020</p>
                     </div>
                 </div>
             </div>
@@ -404,7 +440,6 @@
                     <li>Integrated data from multiple European energy sources, including the ENTSO-E transparency platform and CO2map.de.</li>
                     <li>Processed data from over twenty-two cross-border electricity connections to capture complex interactions influencing German electricity carbon intensity.</li>
                     <li>Employed AutoGluon's automated ensemble framework with LightGBM, CatBoost, and XGBoost to balance prediction accuracy with deployment requirements.</li>
-                    <li>Achieved significant model size reductions (from GBs to ~100-130 MB per model) while maintaining strong predictive performance.</li>
                 </ul>
             </p>
         </div>
@@ -421,7 +456,6 @@
                 <ul class="list-disc list-inside mt-2 text-gray-300">
                     <li>TabPFN's architecture has a GPU memory limitation, restricting the training context size. A bagging pipeline was designed to work around this.</li>
                     <li>Despite memory constraints, the general-purpose TabPFN showed competitive and often superior performance against the specialized DistNet.</li>
-                    <li>The results highlight the potential of using powerful, pre-trained tabular data models for specialized scientific prediction tasks.</li>
                 </ul>
             </p>
         </div>
